@@ -8,6 +8,22 @@ const titles = [
 ];
 ---
 
+<style>
+  #buttonScroll {
+    animation: btnScroll 0.2s linear;
+  }
+  @keyframes btnScroll {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+</style>
 <section class="relative h-full flex flex-col items-start justify-center gap-8">
   <div class="flex flex-col items-start gap-4">
     <h1 class="w-1/2 font-[MontserratRegular] text-8xl text-[#5A3D29]">
@@ -27,9 +43,10 @@ const titles = [
       ))
     }
   </div>
+  <!--  return document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' }); -->
   <ButtonCustom
-    class="absolute bottom-20 right-0 p-7 rounded-full bg-[#DAA38F] cursor-pointer"
+    id="buttonScroll"
+    class="absolute bottom-20 right-0 p-7 rounded-full bg-[#DAA38F] cursor-pointer ani"
     ><Icon name="mdi:arrow-down" class="w-10 h-10 text-white" /></ButtonCustom
   >
 </section>
-

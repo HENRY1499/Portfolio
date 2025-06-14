@@ -18,10 +18,10 @@ const { type, ...atrs } = Astro.props as Props;
   if (button) {
     button.forEach((btn) => {
       btn.addEventListener("mouseenter", () => {
-        gsap.killTweensOf(btn);
+        gsap.killTweensOf(btn, "y");
         gsap.to(btn, {
           y: -10,
-          duration: 0.6,
+          duration: 0.5,
           ease: "power3.inOut",
           yoyo: true,
           repeat: 1,
