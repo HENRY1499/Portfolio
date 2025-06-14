@@ -1,0 +1,18 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+type Props = HTMLAttributes<"button">;
+
+const { type, ...atrs } = Astro.props as Props;
+---
+
+<button
+  type={type}
+  {...atrs}
+  class="flex items-center justify-evenly gap-2 w-full bg-[#DAA38F] text-sm text-white font-[MontserratSemiBold] p-4 rounded-full cursor-pointer"
+  ><slot /></button
+>
+<script>
+  import gsap from "gsap";
+  
+</script>
