@@ -9,10 +9,24 @@ const { type, ...atrs } = Astro.props as Props;
 <button
   type={type}
   {...atrs}
-  class="flex items-center justify-evenly gap-2 w-full bg-[#DAA38F] text-sm text-white font-[MontserratSemiBold] p-4 rounded-full cursor-pointer"
+  class="button flex items-center justify-evenly gap-2 w-full bg-[#DAA38F] text-sm text-white font-[MontserratSemiBold] p-4 rounded-full cursor-pointer"
   ><slot /></button
 >
 <script>
   import gsap from "gsap";
-  
+  const button = document.querySelectorAll(".button");
+  if (button) {
+    button.forEach((btn) => {
+      btn.addEventListener("mouseenter", () => {
+        gsap.killTweensOf(btn);
+        gsap.to(btn, {
+          y: -10,
+          duration: 0.6,
+          ease: "power3.inOut",
+          yoyo: true,
+          repeat: 1,
+        });
+      });
+    });
+  }
 </script>
