@@ -8,25 +8,9 @@ const titles = [
 ];
 ---
 
-<style>
-  #buttonScroll {
-    animation: btnScroll 0.2s linear;
-  }
-  @keyframes btnScroll {
-    0% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-10);
-    }
-    100% {
-      transform: translateY(0);
-    }
-  }
-</style>
 <section class="relative h-full flex flex-col items-start justify-center gap-8">
   <div class="flex flex-col items-start gap-4">
-    <h1 class="w-1/2 font-[MontserratRegular] text-8xl text-[#5A3D29]">
+    <h1 class="w-2/5 font-[MontserratRegular] text-8xl text-[#5A3D29]">
       DESARROLLADOR WEB & MOBILE
     </h1>
     <span class="w-1/2 font-[OpenSansRegular] text-[16px] tracking-widest pl-2"
@@ -45,8 +29,14 @@ const titles = [
   </div>
   <!--  return document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' }); -->
   <ButtonCustom
-    id="buttonScroll"
-    class="absolute bottom-20 right-0 p-7 rounded-full bg-[#DAA38F] cursor-pointer ani"
+    id="floatButton"
+    class="absolute bottom-20 right-0 p-7 rounded-full bg-[#DAA38F] animate-bounce cursor-pointer"
     ><Icon name="mdi:arrow-down" class="w-10 h-10 text-white" /></ButtonCustom
   >
 </section>
+<script>
+  const floatButton = document.getElementById("floatButton");
+  floatButton?.addEventListener("click", () => {
+    document.getElementById("proyect")?.scrollIntoView({ behavior: "smooth" });
+  });
+</script>

@@ -1,0 +1,45 @@
+---
+import TecComponent from "../tecnology/TecComponent.astro";
+import { Icon } from "astro-icon/components";
+import data from "../../../samples/Projects.json";
+---
+
+<div
+  class="w-full grid grid-cols-3 grid-rows-1 gap-6 flex-wrap duration-300 transition-all"
+>
+  {
+    data.map((item, index) => (
+      <div
+        id={`tar-${index + 1}`}
+        class="max-w-full flex bg-white rounded-[.6em] shadow-md shadow-black/25 overflow-hidden "
+      >
+        <div class="w-1/2 flex-initial">
+          <img src="/svg/bagde.svg" class="h-full" />
+        </div>
+        <div class="w-full flex flex-col gap-3 py-2 px-4 ">
+          <div class="flex flex-col">
+            <h1 class="font-[MontserratMedium] text-xl text-[#5A3D29] tracking-widest uppercase">
+              {item.title}
+            </h1>
+            <span class="font-[OpenSansRegular] text-xs text-[#E9D7C0] tracking-wider">
+              {item.subtitle}
+            </span>
+          </div>
+          <span class="font-[RobotoCondensedRegular] text-[.8em]">
+            {item.description}
+          </span>
+          <div class="flex flex-row gap-1.5 flex-wrap">
+            {item.tecnologies.map((icon, index) => (
+              <TecComponent id={`tec-${index + 1}`}>
+                <Icon class="w-4 h-4" name={icon.icon} />
+                <span class="font-[RobotoCondensedLight] text-[.8em] tracking-wide">
+                  {icon.name}
+                </span>
+              </TecComponent>
+            ))}
+          </div>
+        </div>
+      </div>
+    ))
+  }
+</div>

@@ -1,0 +1,13 @@
+---
+import type { HTMLAttributes } from "astro/types";
+type Props = HTMLAttributes<"div">;
+const { id, ...atrs } = Astro.props as Props;
+---
+
+<div
+  id={id}
+  {...atrs}
+  class="w-fit flex gap-1 items-center py-[.2em] px-[.3em] rounded-[.3em] bg-[#D9D9D9] capitalize"
+>
+  <slot />
+</div>
