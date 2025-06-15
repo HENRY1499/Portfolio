@@ -1,30 +1,17 @@
 ---
-const listNav = [
-  {
-    name: "inicio",
-  },
-  {
-    name: "proyectos",
-  },
-  {
-    name: "experiencia",
-  },
-  {
-    name: "contactame",
-  },
-];
+import listNav from "../samples/NavLinks.json";
 ---
 
 <nav
   id="navbar"
-  class="fixed top-4 w-fit left-[35%] z-10 rounded-full px-10 py-3 h-auto bg-[#92ADA4] shadow-md shadow-[#92ADA4] opacity-0 invisible"
+  class="fixed top-4 w-fit left-[42em] z-10 rounded-full px-10 py-3 h-auto bg-[#92ADA4] shadow-md shadow-[#92ADA4] opacity-0 invisible"
 >
   <div class="w-full flex items-center justify-between gap-4">
     {
       listNav.map((item) => (
         <span
           data-id={`${item.name}`}
-          class="text-[#E9D7C0] hover:text-white hover:border-b hover:border-white cursor-pointer capitalize active:font-bold active:text-red-500"
+          class="text-[#E9D7C0] px-4 hover:text-white hover:border-b hover:border-white cursor-pointer capitalize active:font-bold active:text-red-500"
         >
           {item.name}
         </span>
@@ -48,9 +35,6 @@ const listNav = [
         "section[id]"
       ); /*Selecciona todas las secciones que tienen el atributo id*/
 
-    // Ocultamos inicialmente el navbar
-    gsap.set(navbar, { autoAlpha: 0, display: "none" });
-
     sections.forEach((section) => {
       const id = section.getAttribute("id"); /*Obten el id de cada section*/
 
@@ -63,6 +47,10 @@ const listNav = [
               ?.scrollIntoView({ behavior: "smooth" });
         })
       );
+      // GSAP
+
+      // Ocultamos inicialmente el navbar
+      gsap.set(navbar, { autoAlpha: 0, display: "none" });
       ScrollTrigger.create({
         trigger: section,
         start: "top center",
