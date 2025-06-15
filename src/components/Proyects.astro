@@ -13,3 +13,11 @@ import TargetCustom from "./custom/targets/TargetCustom.astro";
     <TargetCustom />
   </div>
 </section>
+<script>
+  const floatButton = document.getElementById("floatButton");
+  floatButton?.addEventListener("click", () => {
+    document
+      .getElementById("proyectos")
+      ?.scrollIntoView({ behavior: "smooth" });
+  });
+</script>
