@@ -1,0 +1,83 @@
+---
+const listNav = [
+  {
+    name: "inicio",
+  },
+  {
+    name: "proyectos",
+  },
+  {
+    name: "experiencia",
+  },
+  {
+    name: "contactame",
+  },
+];
+---
+
+<nav
+  id="navbar"
+  class="fixed top-4 w-fit left-[35%] z-10 rounded-full px-10 py-3 h-auto bg-[#92ADA4] shadow-md shadow-[#92ADA4] opacity-0 invisible"
+>
+  <ul class="w-full flex items-center justify-between gap-4">
+    {
+      listNav.map((item) => (
+        <li class="h-full px-4 py-1">
+          <a
+            href={`#${item.name}`}
+            class="text-[#E9D7C0] hover:text-white hover:border-b hover:border-white cursor-pointer capitalize active:font-bold active:text-red-500"
+          >
+            {item.name}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</nav>
+
+<script>
+  import gsap from "gsap";
+  import ScrollTrigger from "gsap/ScrollTrigger";
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Asegúrate de que esto ocurra **después** de que el DOM esté completamente cargado
+  window.addEventListener("DOMContentLoaded", () => {
+    const navbar = document.getElementById("navbar");
+    const links = document.querySelectorAll("nav a");
+    const sections = document.querySelectorAll("section[id]");
+
+    // Ocultamos inicialmente el navbar
+    gsap.set(navbar, { autoAlpha: 0, display: "none" });
+
+    sections.forEach((section) => {
+      const id = section.getAttribute("id");
+
+      ScrollTrigger.create({
+        trigger: section,
+        start: "top center",
+        end: "bottom center",
+        scrub: true,
+        onEnter: () => {
+          if (id === "proyectos") {
+            gsap.to(navbar, { autoAlpha: 1, display: "flex", duration: 0.5 });
+          }
+          activateLink(id as string);
+          history.replaceState(null, "", `#${id}`);
+        },
+        onEnterBack: () => {
+          if (id === "inicio") {
+            gsap.to(navbar, { autoAlpha: 0, display: "none", duration: 0.5 });
+          }
+          activateLink(id as string);
+          history.replaceState(null, "", `#${id}`);
+        },
+      });
+    });
+
+    function activateLink(id: string) {
+      links.forEach((link) => {
+        link.classList.toggle("active", link.getAttribute("href") === `#${id}`);
+      });
+    }
+  });
+</script>
