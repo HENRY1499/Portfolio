@@ -4,14 +4,14 @@ import listNav from "../samples/NavLinks.json";
 
 <nav
   id="navbar"
-  class="fixed top-4 w-fit left-[42em] z-10 rounded-full px-10 py-3 h-auto bg-[#92ADA4] shadow-md shadow-[#92ADA4] opacity-0 invisible"
+  class="fixed top-4 left-1/2 -translate-x-1/2 z-10 rounded-full py-3 h-auto bg-[#92ADA4] shadow-md shadow-[#92ADA4] opacity-0 invisible"
 >
-  <div class="w-full flex items-center justify-between gap-4">
+  <div class="w-full flex items-center justify-between gap-8">
     {
       listNav.map((item) => (
         <span
           data-id={`${item.name}`}
-          class="text-[#E9D7C0] px-4 hover:text-white hover:border-b hover:border-white cursor-pointer capitalize active:font-bold active:text-red-500"
+          class="text-[#E9D7C0] first:pl-8 last:pr-8 hover:text-white cursor-pointer capitalize active:font-bold active:text-white transition-all duration-300"
         >
           {item.name}
         </span>
