@@ -45,3 +45,12 @@ const { className = "", size = "20px", color = "currentColor" } = Astro.props;
     stroke="black"
     stroke-width="0.3"></path>
 </svg>
+
+<script>
+  const paths = document.querySelectorAll("svg path");
+  paths.forEach((path, index) => {
+    if (path) {
+      const lenght_path = path.getTotalLength();
+    }
+  });
+</script>
