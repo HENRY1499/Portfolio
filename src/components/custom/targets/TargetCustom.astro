@@ -5,25 +5,25 @@ import data from "../../../samples/Projects.json";
 ---
 
 <div
-  class="md:w-full md:grid-rows-1 sm:grid-cols-2 grid max-h-screen flex-wrap gap-2 duration-300 transition-all"
+  class="xl:grid-cols-3 md:w-full sm:grid-cols-2 grid flex-wrap gap-2 duration-300 transition-all"
 >
   {
     data.map((item, index) => (
       <div
         id={`tar-${index + 1}`}
-        class="sm:h-auto max-w-full flex gap-2 bg-white rounded-[.6em] shadow-md h-[7em]  shadow-black/25 overflow-hidden transition-all duration-300"
+        class="xl:gap-4 sm:h-auto max-w-full flex gap-2 bg-white rounded-[.7em] shadow-md h-[7em] shadow-black/25 overflow-hidden transition-all duration-300"
       >
         <div class="w-24 bg-amber-950 flex-initial" />
-        <div class="w-full flex flex-col gap-2 py-3 ">
+        <div class="xl:gap-4 w-full flex flex-col justify-between  gap-2 py-3 ">
           <div class="flex flex-col items-start">
-            <h1 class="sm:text-xl font-[MontserratMedium] text-xs text-[#5A3D29] tracking-widest uppercase">
+            <h1 class="xl:text-2xl sm:text-xl font-[MontserratMedium] text-xs text-[#5A3D29] tracking-widest uppercase">
               {item.title}
             </h1>
-            <span class="font-[OpenSansRegular] text-start text-[.6em] text-[#5A3D29] tracking-wider">
+            <span class="xl:text-sm font-[OpenSansRegular] text-start text-[.6em] text-[#5A3D29] tracking-wider">
               {item.subtitle}
             </span>
           </div>
-          <span class="md:block font-[RobotoCondensedRegular] text-start text-[.8em] hidden">
+          <span class="xl:w-full md:block font-[RobotoCondensedRegular] text-start text-[.8em] hidden">
             {item.description}
           </span>
           <div class="flex flex-row gap-1.5 flex-wrap">
