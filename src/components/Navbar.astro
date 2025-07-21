@@ -49,6 +49,8 @@ import listNav from "../samples/NavLinks.json";
         })
       );
       // GSAP
+
+      // WELCOME
       const tl = gsap.timeline({ ease: "sine.out" });
       tl.fromTo(
         "#inicio h1",
@@ -78,6 +80,7 @@ import listNav from "../samples/NavLinks.json";
           "-=0.5"
         );
 
+      // NAVBAR
       ScrollTrigger.create({
         trigger: section,
         start: "top 100px",
