@@ -37,6 +37,7 @@ import listNav from "../samples/NavLinks.json";
 
     sections.forEach((section) => {
       const id = section.getAttribute("id"); /*Obten el id de cada section*/
+      console.log("sectiones", id);
 
       links?.forEach((item) =>
         item.addEventListener("click", () => {
@@ -48,12 +49,40 @@ import listNav from "../samples/NavLinks.json";
         })
       );
       // GSAP
+      const tl = gsap.timeline({ ease: "sine.out" });
+      tl.fromTo(
+        "#inicio h1",
+        {
+          autoAlpha: 1,
+          opacity: 0,
+          scale: 0.5,
+          duration: 1.5,
+        },
+        {
+          autoAlpha: 1,
+          opacity: 0.8,
+          scale: 1,
+          duration: 1.5,
+        }
+      )
+        .fromTo(
+          "#inicio span",
+          { autoAlpha: 0, opacity: 0, y: -20, duration: 1.5 },
+          { autoAlpha: 1, opacity: 1, y: 0, duration: 1.5 }
+        )
+        .fromTo(
+          "#inicio button",
+          { autoAlpha: 0, opacity: 0, y: -20, duration: 1.5 },
+          { autoAlpha: 1, opacity: 1, y: 0, duration: 1.5 },
+          "-=0.5"
+        );
 
       ScrollTrigger.create({
         trigger: section,
-        start: "top center",
-        end: "bottom center",
-        scrub: true,
+        start: "top 100px",
+        end: "bottom 100px",
+        scrub: 4,
+        markers: true,
         onEnter: () => {
           if (id === "proyectos") {
             gsap.to(navbar, {
