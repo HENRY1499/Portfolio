@@ -48,3 +48,43 @@ const titles = [
     /></ButtonCustom
   >
 </section>
+<script>
+  import gsap from "gsap";
+
+  const floatButton = document.getElementById("floatButton");
+  floatButton?.addEventListener("click", () => {
+    document
+      .getElementById("proyectos")
+      ?.scrollIntoView({ behavior: "smooth" });
+  });
+  // GSAP
+  // WELCOME
+  const tl = gsap.timeline({ ease: "sine.out" });
+  tl.fromTo(
+    "#inicio h1",
+    {
+      autoAlpha: 1,
+      opacity: 0,
+      scale: 0,
+      duration: 1.5,
+    },
+    {
+      autoAlpha: 1,
+      scale: 1,
+      opacity: 1,
+      duration: 1.5,
+    }
+  )
+    .fromTo(
+      "#inicio span",
+      { autoAlpha: 0, opacity: 0, y: -20, duration: 1.2 },
+      { autoAlpha: 1, opacity: 1, y: 0, duration: 1.2 },
+      "-=0.8"
+    )
+    .fromTo(
+      "#inicio button",
+      { autoAlpha: 0, opacity: 0, y: -20, duration: 1.5 },
+      { autoAlpha: 1, opacity: 1, y: 0, duration: 1.5, stagger: 0.4 },
+      "-=0.5"
+    );
+</script>
