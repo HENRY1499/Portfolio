@@ -8,18 +8,19 @@ const titles = [
 ];
 ---
 
+<!-- class="2xl:w-full lg:w-11/12 sm:gap-8 relative w-10/12 left-1/2 -translate-x-1/2 h-screen flex flex-col flex-wrap items-start justify-center gap-6 px-2 transition-all duration-300 flex-initial" -->
 <section
   id="inicio"
-  class="2xl:w-full lg:w-11/12 sm:gap-8 relative w-10/12 left-1/2 -translate-x-1/2 h-screen flex flex-col flex-wrap items-start justify-center gap-6 px-2 transition-all duration-300 flex-initial"
+  class="2xl:w-full lg:w-11/12 sm:gap-8 relative w-10/12 left-1/2 -translate-x-1/2 h-screen flex flex-col flex-wrap items-start justify-center gap-6 transition-all duration-300 flex-initial"
 >
   <div class="sm:gap-4 flex flex-col items-start justify-center gap-2">
     <h1
-      class="2xl:text-8xl lg:text-7xl lg:w-2/5 sm:text-4xl text-start font-[MontserratRegular] w-full text-2xl text-[#5A3D29] flex-initial"
+      class="2xl:text-8xl lg:text-7xl lg:w-2/5 sm:text-4xl text-start font-[MontserratRegular] w-full text-2xl text-[#5A3D29] flex-initial opacity-0 invisible"
     >
       DESARROLLADOR WEB & MOBILE
     </h1>
     <span
-      class="lg:w-1/2 lg:pl-2 sm:text-[1em] sm:w-full font-[OpenSansRegular] w-11/12 text-start text-[.7em] tracking-widest"
+      class="lg:w-1/2 lg:pl-2 sm:text-[1em] sm:w-full font-[OpenSansRegular] w-11/12 text-start text-[.7em] tracking-widest opacity-0 invisible"
       >Hola, mi nombre es Henry Castillo, soy un programador web, especializado
       en el diseño de páginas web y aplicativos móviles.</span
     >
@@ -28,19 +29,62 @@ const titles = [
     class="lg:w-3/5 md:w-full md:flex-row md:gap-5 md:justify-between w-full flex flex-col gap-2 duration-300 transition-all"
   >
     {
-      titles.map((item, index) => (
-        <ButtonCustom id={`button-${index}`} type="button">
-          {item.name} <Icon name={item.icon} class="w-6 h-6" />
+      titles.map((item, _index) => (
+        <ButtonCustom id="button" type="button" class="w-full lg:py-4 py-3">
+          {item.name}
+          <Icon name={item.icon} class="w-6 h-6" />
         </ButtonCustom>
       ))
     }
   </div>
   <ButtonCustom
     id="floatButton"
-    class="lg:right-0 lg:p-7 lg:translate-x-0 absolute bottom-2 right-1/2 translate-x-1/2 rounded-full bg-[#DAA38F] cursor-pointer animate-bounce-custom"
-    ><Icon
+    class="lg:bottom-0 lg:items-end w-full items-center justify-center absolute bg-transparent bottom-24 cursor-pointer animate-bounce-custom flex flex-col"
+  >
+    <!-- <span class="sm:hidden text-slate-800">Scrool down</span> -->
+    <Icon
       name="mdi:arrow-down"
-      class="lg:w-10 lg:h-10 w-7 h-14 text-white"
+      class="lg:p-7 lg:w-28 lg:h-28 lg:bg-[#DAA38F] relative w-7 h-14 text-white rounded-full bg-[#DAA38F]/20"
     /></ButtonCustom
   >
 </section>
+<script>
+  import gsap from "gsap";
+
+  const floatButton = document.getElementById("floatButton");
+  floatButton?.addEventListener("click", () => {
+    document
+      .getElementById("proyectos")
+      ?.scrollIntoView({ behavior: "smooth" });
+  });
+  // GSAP
+  // WELCOME
+  const tl = gsap.timeline({ ease: "sine.out" });
+  tl.fromTo(
+    "#inicio h1",
+    {
+      autoAlpha: 1,
+      opacity: 0,
+      scale: 0,
+      duration: 1.5,
+    },
+    {
+      autoAlpha: 1,
+      scale: 1,
+      opacity: 1,
+      duration: 1.5,
+    }
+  )
+    .fromTo(
+      "#inicio span",
+      { autoAlpha: 0, opacity: 0, y: -20, duration: 1.2 },
+      { autoAlpha: 1, opacity: 1, y: 0, duration: 1.2 },
+      "-=0.8"
+    )
+    .fromTo(
+      "#inicio button",
+      { autoAlpha: 0, opacity: 0, y: -20, duration: 1.5 },
+      { autoAlpha: 1, opacity: 1, y: 0, duration: 1.5, stagger: 0.4 },
+      "-=0.5"
+    );
+</script>

@@ -53,6 +53,8 @@ body {
 body {
   background-color: #e9d7c0;
 }
+/* projects */
+
 @media screen and (min-width: 1440px) {
   body {
     padding: 0 8em;

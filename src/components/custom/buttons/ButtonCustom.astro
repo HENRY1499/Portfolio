@@ -3,13 +3,13 @@ import type { HTMLAttributes } from "astro/types";
 
 type Props = HTMLAttributes<"button">;
 
-const { type, ...atrs } = Astro.props as Props;
+const { type, class: className = "", ...atrs } = Astro.props as Props;
 ---
 
 <button
   type={type}
   {...atrs}
-  class="lg:p-4 md:p-3 sm:text-sm button flex items-center justify-center gap-2 w-full bg-[#DAA38F] text-xs text-white font-[MontserratSemiBold] p-2 rounded-full cursor-pointer"
+  class={`sm:text-sm button flex items-center justify-center  bg-[#DAA38F] text-xs text-white font-[MontserratSemiBold] rounded-full cursor-pointer opacity-0 invisible ${className}`}
   ><slot /></button
 >
 <script>

@@ -1,6 +1,6 @@
 [
   {
-    "title": "Tmoney APP",
+    "title": "Tmoney",
     "subtitle": "Descripción breve del proyecto",
     "description": "Este proyecto fue realizado con el fin de mejorar las apuestas deportivas. Su principal distintivo, es que cuenta con un scanner deportivo, el cual ayuda a los clientes a tener una ida mas clara decuanto se debe apostar al equipo de su elección.",
     "tecnologies": [
@@ -24,14 +24,39 @@
     ]
   },
   {
-    "title": "Tienda APP",
-    "subtitle": "Aplicación de tienda hecha en Flutter",
-    "description": "Este proyecto fue realizado con el fin de mejorar las ventas en la tienda de mis padres.",
+    "title": "Tmoney",
+    "subtitle": "Descripción breve del proyecto",
+    "description": "Este proyecto fue realizado con el fin de mejorar las apuestas deportivas. Su principal distintivo, es que cuenta con un scanner deportivo, el cual ayuda a los clientes a tener una ida mas clara decuanto se debe apostar al equipo de su elección.",
     "tecnologies": [
-      { "name": "Flutter", "icon": "mdi:nodejs" },
-      { "name": "Dart", "icon": "mdi:language-typescript" },
-      { "name": "Rive", "icon": "mdi:react" },
-      { "name": "Axios", "icon": "mdi:language-html5" }
+      { "name": "Javascript", "icon": "mdi:nodejs" },
+      { "name": "Typescript", "icon": "mdi:language-typescript" },
+      { "name": "React", "icon": "mdi:react" },
+      { "name": "NextJS", "icon": "mdi:language-html5" },
+      { "name": "Taildwind", "icon": "mdi:tailwind" }
+    ]
+  },
+  {
+    "title": "Tmoney",
+    "subtitle": "Descripción breve del proyecto",
+    "description": "Este proyecto fue realizado con el fin de mejorar las apuestas deportivas. Su principal distintivo, es que cuenta con un scanner deportivo, el cual ayuda a los clientes a tener una ida mas clara decuanto se debe apostar al equipo de su elección.",
+    "tecnologies": [
+      { "name": "Javascript", "icon": "mdi:nodejs" },
+      { "name": "Typescript", "icon": "mdi:language-typescript" },
+      { "name": "React", "icon": "mdi:react" },
+      { "name": "NextJS", "icon": "mdi:language-html5" },
+      { "name": "Taildwind", "icon": "mdi:tailwind" }
+    ]
+  },
+  {
+    "title": "Tmoney",
+    "subtitle": "Descripción breve del proyecto",
+    "description": "Este proyecto fue realizado con el fin de mejorar las apuestas deportivas. Su principal distintivo, es que cuenta con un scanner deportivo, el cual ayuda a los clientes a tener una ida mas clara decuanto se debe apostar al equipo de su elección.",
+    "tecnologies": [
+      { "name": "Javascript", "icon": "mdi:nodejs" },
+      { "name": "Typescript", "icon": "mdi:language-typescript" },
+      { "name": "React", "icon": "mdi:react" },
+      { "name": "NextJS", "icon": "mdi:language-html5" },
+      { "name": "Taildwind", "icon": "mdi:tailwind" }
     ]
   },
   {

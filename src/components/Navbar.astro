@@ -37,6 +37,7 @@ import listNav from "../samples/NavLinks.json";
 
     sections.forEach((section) => {
       const id = section.getAttribute("id"); /*Obten el id de cada section*/
+      console.log("sectiones", id);
 
       links?.forEach((item) =>
         item.addEventListener("click", () => {
@@ -47,13 +48,12 @@ import listNav from "../samples/NavLinks.json";
               ?.scrollIntoView({ behavior: "smooth" });
         })
       );
-      // GSAP
-
+      // NAVBAR
       ScrollTrigger.create({
-        trigger: section,
-        start: "top center",
-        end: "bottom center",
-        scrub: true,
+        trigger: "#inicio",
+        start: "bottom top",
+        // end: "bottom 100px",
+        scrub: 4,
         onEnter: () => {
           if (id === "proyectos") {
             gsap.to(navbar, {
