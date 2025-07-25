@@ -18,5 +18,25 @@
         "detail": "Colaboración en proyectos con enfoque en rendimiento, escalabilidad y buenas prácticas de desarrollo.<"
       }
     ]
+  },
+  {
+    "dateTo": "Julio 2022",
+    "dateFrom": "Diciembre 2022",
+    "company": "Pyrus S.A.C",
+    "type": "Remoto",
+    "responsability": [
+      {
+        "detail": "Maquetación de sitios web responsivos y accesibles utilizando HTML5, CSS3 y JavaScript moderno."
+      },
+      {
+        "detail": "Integración de componentes dinámicos y funcionalidades interactivas con Vue.js."
+      },
+      {
+        "detail": "Desarrollo de backend con PHP y frameworks como Laravel, implementando autenticación, rutas y consumo de APIs."
+      },
+      {
+        "detail": "Colaboración en proyectos con enfoque en rendimiento, escalabilidad y buenas prácticas de desarrollo.<"
+      }
+    ]
   }
 ]
