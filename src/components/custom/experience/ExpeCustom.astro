@@ -3,88 +3,35 @@ import Coffe from "@/components/custom/icon/Coffe.astro";
 import experience from "@/samples/Experience.json";
 ---
 
-<div id="exp" class="invisible">
-  {
-    experience.map((item, _index) => (
-      <div class=" left-0 max-w-full border-t border-black flex flex-col px-8 py-4">
-        <div class="absolute left-0 -top-6 flex flex-row gap-1 items-end bg-[#e9d7c0] pr-4">
-          <Coffe className="_icon_coffe invisible" size="30px" />
-          <span class="date text-[#9B7D61]/40 mb-0 text-[.8em] font-[OpenSansSemiBold] tracking-wider invisible">
-            {item.dateTo} - {item.dateFrom}
+{
+  experience.map((item, _index) => (
+    <div class="relative max-w-full border-t border-black flex flex-col px-8 py-4">
+      <div class="absolute left-0 -top-6 flex flex-row gap-1 items-end bg-[#e9d7c0] pr-4">
+        <Coffe size="30px" />
+        <span class="date text-[#9B7D61]/40 mb-0 text-[.8em] font-[OpenSansSemiBold] tracking-wider">
+          {item.dateTo} - {item.dateFrom}
+        </span>
+      </div>
+      <div class="flex flex-col gap-4 items-start">
+        <div>
+          <h1 class="uppercase font-[OpenSansBold] text-2xl text-[#5A3D29] tracking-widest">
+            {item.company}
+          </h1>
+          <span class="w-fit rounded-full bg-[#FED8A6] text-white font-[OpenSansSemiBold] px-4 py-0.5 uppercase text-[.8em]">
+            {item.type}
           </span>
         </div>
-        <div class="flex flex-col gap-4 items-start">
-          <div>
-            <h1 class="uppercase font-[OpenSansBold] text-2xl text-[#5A3D29] tracking-widest">
-              {item.company}
-            </h1>
-            <span class="w-fit rounded-full bg-[#FED8A6] text-white font-[OpenSansSemiBold] px-4 py-0.5 uppercase text-[.8em]">
-              {item.type}
-            </span>
-          </div>
-          <div class="flex flex-col gap-1.5">
-            {item.responsability.map((item) => (
-              <div class="flex gap-2 items-start">
-                <img src="/svg/circle.svg" alt="icon" class="py-1" />
-                <span class="font-[OpenSansLight] text-[.7em]">
-                  {item.detail}
-                </span>
-              </div>
-            ))}
-          </div>
+        <div class="flex flex-col gap-1.5">
+          {item.responsability.map((item) => (
+            <div class="flex gap-2 items-start">
+              <img src="/svg/circle.svg" alt="icon" class="py-1" />
+              <span class="font-[OpenSansLight] text-[.7em]">
+                {item.detail}
+              </span>
+            </div>
+          ))}
         </div>
       </div>
-    ))
-  }
-</div>
-<script>
-  import gsap from "gsap";
-  import { ScrollTrigger } from "gsap/src/all";
-  gsap.registerPlugin(ScrollTrigger);
-  const tl = gsap.timeline({
-    ease: "sine.out",
-    duration: 0.8,
-    scrollTrigger: {
-      trigger: "#exp",
-      start: "top center",
-      end: "bottom center",
-      markers: true,
-      scrub: 1,
-      snap: {
-        snapTo: "labels",
-        duration: { min: 5, max: 5 },
-      },
-    },
-  });
-  tl.addLabel("contenedor").from("#exp", {
-    y: 50,
-    scale: 2,
-    autoAlpha: 0,
-  });
-  tl.addLabel("icono").from("._icon_coffe", {
-    y: -50,
-    autoAlpha: 0,
-  });
-  tl.addLabel("fecha").from(".date", {
-    y: -50,
-    autoAlpha: 0,
-  });
-  // tl.from(
-  //   "._icon_coffe",
-  //   {
-  //     y: -10,https://www.tiktok.com/following
-  //     autoAlpha: 0,
-  //     scrollTrigger: {
-  //       trigger: "#exp",
-  //       start: "clamp(top 20%)",
-  //       end: "clamp(top 10%)",
-  //       scrub: 1,
-  //       markers: true,
-  //     },
-  //   },
-  //   "+=0.5"
-  // ).from(".date", {
-  //   y: -10,
-  //   autoAlpha: 0,
-  // });
-</script>
+    </div>
+  ))
+}
