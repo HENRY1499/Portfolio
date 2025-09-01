@@ -7,23 +7,23 @@ import experience from "@/samples/Experience.json";
   experience.map((item, _index) => (
     <div class="relative max-w-full border-t border-black flex flex-col px-8 py-4">
       <div class="absolute left-0 -top-6 flex flex-row gap-1 items-end bg-[#e9d7c0] pr-4">
-        <Coffe size="30px" />
-        <span class="date text-[#9B7D61]/40 mb-0 text-[.8em] font-[OpenSansSemiBold] tracking-wider">
+        <Coffe id="coffe" className="invisible" size="30px" />
+        <span class="date invisible text-[#9B7D61]/40 mb-0 text-[.8em] font-[OpenSansSemiBold] tracking-wider">
           {item.dateTo} - {item.dateFrom}
         </span>
       </div>
       <div class="flex flex-col gap-4 items-start">
         <div>
-          <h1 class="uppercase font-[OpenSansBold] text-2xl text-[#5A3D29] tracking-widest">
+          <h1 class="uppercase font-[OpenSansBold] text-2xl text-[#5A3D29] tracking-widest company invisible">
             {item.company}
           </h1>
-          <span class="w-fit rounded-full bg-[#FED8A6] text-white font-[OpenSansSemiBold] px-4 py-0.5 uppercase text-[.8em]">
+          <span class="border rounded-full bg-[#FED8A6] text-white font-[OpenSansSemiBold] px-4 py-0.5 uppercase text-[.8em] type invisible">
             {item.type}
           </span>
         </div>
         <div class="flex flex-col gap-1.5">
           {item.responsability.map((item) => (
-            <div class="flex gap-2 items-start">
+            <div class="flex gap-2 items-start details">
               <img src="/svg/circle.svg" alt="icon" class="py-1" />
               <span class="font-[OpenSansLight] text-[.7em]">
                 {item.detail}
@@ -35,3 +35,41 @@ import experience from "@/samples/Experience.json";
     </div>
   ))
 }
+
+<script>
+  import gsap from "gsap";
+
+  const coffe = document.querySelectorAll("#coffe");
+  const date = document.querySelectorAll(".date");
+  const company = document.querySelectorAll(".company");
+  const type = document.querySelectorAll(".type");
+  const list = document.querySelectorAll(".details");
+  console.log(list);
+
+  const tl = gsap.timeline();
+  tl.from(coffe, {
+    autoAlpha: 0,
+    delay: 0.5,
+  })
+    .from(
+      date,
+      {
+        autoAlpha: 0,
+      },
+      "+=0.5"
+    )
+    .from(
+      company,
+      {
+        autoAlpha: 0,
+        duration: 1.2,
+      },
+      "+=0.5"
+    )
+    .from(type, {
+      opacity: 0,
+      duration: 1.4,
+      autoAlpha: 0,
+    })
+    ;
+</script>
