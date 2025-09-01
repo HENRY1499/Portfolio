@@ -5,23 +5,26 @@ import data from "../../../samples/Projects.json";
 ---
 
 <div
-  class="absolute top-1/2 -translate-y-1/2 sm:flex-row w-full flex flex-col flex-wrap gap-6 justify-center items-center duration-300 transition-all"
+  class="absolute top-1/2 -translate-y-1/2 sm:flex-row w-full grid grid-cols-3 gap-6 duration-300 transition-all"
 >
   {
     data.map((item, index) => (
       <div
         id={`tar-${index + 1}`}
-        class="project xl:gap-4 max-w-1/6 h-fit gap-2 bg-white rounded-[.7em] shadow-md shadow-black/25 overflow-hidden transition-all duration-300"
+        class="project xl:gap-4 min-w-full h-full gap-2 bg-white rounded-[.7em] shadow-md shadow-black/25 overflow-hidden transition-all duration-300"
       >
-        <div class="xl:gap-4 w-full flex flex-col justify-center gap-2 py-3 px-4 ">
+        <div class="xl:gap-4 flex flex-col justify-between h-full gap-2 py-3 px-4">
           <div class="flex flex-col items-start">
             <h1 class="xl:text-2xl sm:text-xl font-[MontserratMedium] text-xs text-[#5A3D29] tracking-widest uppercase">
               {item.title}
             </h1>
-            <span class="xl:text-sm font-[OpenSansRegular] text-start text-[.6em] text-[#5A3D29] tracking-wider">
-              {item.subtitle}
+            <span class="xl:text-xs font-[OpenSansRegular] text-start text-[.6em] text-[#5A3D29] tracking-wider">
+              {item.description}
             </span>
           </div>
+          {/* <span class="xl:text-xs w-1/2 font-[OpenSansRegular] text-start text-[.6em] text-[#5A3D29] tracking-wider">
+            {item.description}
+          </span> */}
           <div class="flex flex-row gap-1.5 flex-wrap">
             {item.tecnologies.map((icon, index) => (
               <TecComponent id={`tec-${index + 1}`}>

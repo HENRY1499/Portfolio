@@ -1,13 +1,24 @@
 ---
+import { Icon } from "astro-icon/components";
 import TargetCustom from "./custom/targets/TargetCustom.astro";
 ---
 
 <section id="proyectos" class="relative w-full h-screen flex-col text-center">
-  <h1
-    class="absolute top-24 title w-full md:text-7xl font-[MontserratMedium] text-2xl uppercase"
-  >
-    Proyectos
-  </h1>
+  <div class="absolute w-full top-24 flex flex-row items-end justify-between">
+    <h1
+      class="title w-full text-start md:text-6xl text-[#5A3D29] font-[MontserratMedium] text-2xl uppercase"
+    >
+      Proyectos
+    </h1>
+    <div class="flex flex-row justify-between items-center">
+      <a
+        href="#"
+        class="w-full h-fit text-end text-[#DAA38F] tracking-wider font-bold text-sm hover:text-lg duration-300 transition-all"
+        >Ver más</a
+      >
+      <Icon name="mdi:arrow-right-thin" class="more text-[#DAA38F]" size={52} />
+    </div>
+  </div>
   <TargetCustom />
 </section>
 <script>
@@ -20,6 +31,8 @@ import TargetCustom from "./custom/targets/TargetCustom.astro";
       y: -20,
       opacity: 0,
     },
-    "+=0.5"
-  );
+    "+=1.5"
+  ).to(".more", {
+    autoAlpha: 1,
+  });
 </script>
