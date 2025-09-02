@@ -1,23 +1,14 @@
 ---
-import { undefined } from "astro:schema";
-
 export interface Props {
-  id: string;
   className?: string;
   size?: string; // Ej: '24px', '2rem', etc.
   color?: string; // Ej: '#000', 'currentColor', etc.
 }
 
-const {
-  id = "",
-  className = "",
-  size = "20px",
-  color = "currentColor",
-} = Astro.props;
+const { className = "", size = "20px", color = "currentColor" } = Astro.props;
 ---
 
 <svg
-  id={id}
   viewBox="0 0 20 26"
   fill="none"
   width={size}

@@ -1,23 +1,27 @@
 ---
 import Coffe from "@/components/custom/icon/Coffe.astro";
 import experience from "@/samples/Experience.json";
+import Stroke from "../icon/Stroke.astro";
 ---
 
 {
   experience.map((item, _index) => (
-    <div class="relative max-w-full border-t border-black flex flex-col px-8 py-4">
+    <div class="experience relative max-w-full  flex flex-col px-8 py-4 ">
       <div class="absolute left-0 -top-6 flex flex-row gap-1 items-end bg-[#e9d7c0] pr-4">
-        <Coffe id="coffe" className="invisible" size="30px" />
-        <span class="date invisible text-[#9B7D61]/40 mb-0 text-[.8em] font-[OpenSansSemiBold] tracking-wider">
-          {item.dateTo} - {item.dateFrom}
-        </span>
+        <Coffe className="invisible coffe" size="30px" />
+        <div class="flex flex-row items-center gap-2 ">
+          <span class="date z-50 invisible text-[#9B7D61]/40 mb-0 text-[.8em] font-[OpenSansSemiBold] tracking-wider">
+            {item.dateTo} - {item.dateFrom}
+          </span>
+          <Stroke width={150} />
+        </div>
       </div>
-      <div class="flex flex-col gap-4 items-start">
+      <div class="flex flex-col gap-4 items-start overflow-hidden">
         <div>
           <h1 class="uppercase font-[OpenSansBold] text-2xl text-[#5A3D29] tracking-widest company invisible">
             {item.company}
           </h1>
-          <span class="border rounded-full bg-[#FED8A6] text-white font-[OpenSansSemiBold] px-4 py-0.5 uppercase text-[.8em] type invisible">
+          <span class="inline-block border rounded-full bg-[#FED8A6] text-white font-[OpenSansSemiBold] px-4 py-0.5 uppercase text-[.8em] type invisible">
             {item.type}
           </span>
         </div>
@@ -38,38 +42,54 @@ import experience from "@/samples/Experience.json";
 
 <script>
   import gsap from "gsap";
+  const block_exp = document.querySelectorAll(".experience");
 
-  const coffe = document.querySelectorAll("#coffe");
-  const date = document.querySelectorAll(".date");
-  const company = document.querySelectorAll(".company");
-  const type = document.querySelectorAll(".type");
-  const list = document.querySelectorAll(".details");
-  console.log(list);
+  block_exp.forEach((item, index) => {
+    const coffe = item.querySelector(".coffe");
+    const date = item.querySelector(".date");
+    const company = item.querySelector(".company");
+    const type = item.querySelector(".type");
+    const list = item.querySelectorAll(".details");
+    // Definimos la timeline
+    const tl = gsap.timeline();
+    const master = gsap.timeline();
 
-  const tl = gsap.timeline();
-  tl.from(coffe, {
-    autoAlpha: 0,
-    delay: 0.5,
-  })
-    .from(
-      date,
-      {
+    tl
+      .from(coffe, {
         autoAlpha: 0,
-      },
-      "+=0.5"
-    )
-    .from(
-      company,
-      {
-        autoAlpha: 0,
-        duration: 1.2,
-      },
-      "+=0.5"
-    )
-    .from(type, {
-      opacity: 0,
-      duration: 1.4,
-      autoAlpha: 0,
-    })
-    ;
+        delay: 0.5,
+      })
+      .from(
+        date,
+        {
+          autoAlpha: 0,
+        },
+        "+=0.5"
+      )
+      .from(
+        company,
+        {
+          autoAlpha: 0,
+          duration: 1.2,
+        },
+        "+=0.5"
+      )
+      .from(
+        type,
+        {
+          x: -100,
+          duration: 0.8,
+          autoAlpha: 0,
+        },
+        "<=0.3"
+      ),
+      list.forEach((item) => {
+        tl.from(item, {
+          opacity: 0,
+          stagger: 0.2,
+        });
+      });
+
+    master.add(tl, index * 5);
+  });
 </script>
