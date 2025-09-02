@@ -10,6 +10,7 @@ const { className = "", width = 709, height = 3 } = Astro.props;
 ---
 
 <svg
+  id="path"
   class={className}
   width={`${width}px`}
   height={`${height}px`}
@@ -17,11 +18,12 @@ const { className = "", width = 709, height = 3 } = Astro.props;
   fill="none"
   xmlns="http://www.w3.org/2000/svg"
 >
-  <line
+  <path
+    id="line"
     x1="-0.000738552"
     y1="2.5"
     x2="708.999"
     y2="1.45273"
     stroke="#9B7D61"
-    stroke-width="6"></line>
+    stroke-width="6"></path>
 </svg>

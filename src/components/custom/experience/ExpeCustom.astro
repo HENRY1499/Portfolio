@@ -13,7 +13,7 @@ import Stroke from "../icon/Stroke.astro";
           <span class="date z-50 invisible text-[#9B7D61]/40 mb-0 text-[.8em] font-[OpenSansSemiBold] tracking-wider">
             {item.dateTo} - {item.dateFrom}
           </span>
-          <Stroke width={150} />
+          <Stroke className="invisible" width={150} />
         </div>
       </div>
       <div class="flex flex-col gap-4 items-start overflow-hidden">
@@ -42,6 +42,8 @@ import Stroke from "../icon/Stroke.astro";
 
 <script>
   import gsap from "gsap";
+  import DrawSVGPlugin from "gsap";
+  gsap.registerPlugin(DrawSVGPlugin);
   const block_exp = document.querySelectorAll(".experience");
 
   block_exp.forEach((item, index) => {
@@ -50,6 +52,12 @@ import Stroke from "../icon/Stroke.astro";
     const company = item.querySelector(".company");
     const type = item.querySelector(".type");
     const list = item.querySelectorAll(".details");
+    const path = item.querySelector("#path");
+    const line = item.querySelector("#line");
+
+    console.log(path);
+    console.log(line);
+
     // Definimos la timeline
     const tl = gsap.timeline();
     const master = gsap.timeline();
@@ -66,6 +74,11 @@ import Stroke from "../icon/Stroke.astro";
         },
         "+=0.5"
       )
+      .from(line, {
+        autoAlpha: 0,
+        drawSVG: "40% 60%",
+        delay: 0.5,
+      })
       .from(
         company,
         {
