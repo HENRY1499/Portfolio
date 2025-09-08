@@ -6,24 +6,16 @@ export interface Props {
   color?: string; // Ej: '#000', 'currentColor', etc.
 }
 
-const { className = "", width = 709, height = 3 } = Astro.props;
+const { className = "", width = 631, height = 2 } = Astro.props;
 ---
 
 <svg
-  id="path"
   class={className}
   width={`${width}px`}
   height={`${height}px`}
-  viewBox="0 0 709 3"
+  viewBox="0 0 631 2"
   fill="none"
   xmlns="http://www.w3.org/2000/svg"
 >
-  <path
-    id="line"
-    x1="-0.000738552"
-    y1="2.5"
-    x2="708.999"
-    y2="1.45273"
-    stroke="#9B7D61"
-    stroke-width="6"></path>
+  <path id="path" d="M0 1H631" stroke="#9B7D61" stroke-width="6"></path>
 </svg>
