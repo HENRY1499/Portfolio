@@ -1,0 +1,33 @@
+---
+import ButtonAtom from "@/components/atoms/ButtonAtom.astro";
+import IconAtom from "@/components/atoms/IconAtom.astro";
+import ScrollhintMolecule from "@/components/molecules/ScrollhintMolecule.astro";
+---
+
+<div class="w-full h-screen left-0">
+  <div class="absolute top-0 right-0 w-full">
+    <IconAtom />
+    <div class="absolute top-0 w-full h-full">
+      <div class="flex flex-col items-end gap-60 p-24 w-full h-full">
+        <div class="flex flex-col items-end gap-4 w-full">
+          <p
+            class="w-11/12 text-end mb-0 uppercase text-8xl font-[MontserratBold]"
+          >
+            Programador WEB & diseñador ux/ ui
+          </p>
+          <span class="text-lg w-5/12 text-end font-[OpenSansLight]"
+            >Hola, mi nombre es Henry Castillo, soy un programador web,
+            especializado en el diseño de páginas web y aplicativos móviles.</span
+          >
+        </div>
+        <ButtonAtom title={"Descargar"} style="w-fit" />
+        <div class="w-full h-auto">
+          <div class="flex justify-between items-center">
+            <span>Slider Tecnologia</span>
+            <ScrollhintMolecule />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
