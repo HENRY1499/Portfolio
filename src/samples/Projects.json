@@ -1,111 +1,17 @@
 [
   {
-    "title": "TMoney",
-    "subtitle": "Descripción breve del proyecto",
-    "description": "T-Money Sport es una plataforma avanzada diseñada para sport traders que buscan maximizar su rentabilidad mediante arbitraje deportivo. La herramienta ofrece un escáner de surebets en tiempo real —tanto para apuestas prematch como en vivo",
-    "tecnologies": [
-      { "name": "Javascript", "icon": "mdi:nodejs" },
-      { "name": "React", "icon": "mdi:react" },
-      { "name": "NextJS", "icon": "mdi:language-html5" },
-      { "name": "Tailwind", "icon": "mdi:tailwind" },
-      { "name": "ChartJS", "icon": "mdi:tailwind" },
-      { "name": "Motion", "icon": "mdi:tailwind" },
-      { "name": "Jwt", "icon": "mdi:tailwind" },
-      { "name": "Zod", "icon": "mdi:tailwind" },
-      { "name": "Zustand", "icon": "mdi:tailwind" }
-    ]
+    "title": "T-Money"
   },
   {
-    "title": "Streammax",
-    "subtitle": "Descripción breve del proyecto",
-    "description": "StreamMax es una plataforma que ofrece perfiles privados para IPTV y Netflix, proporcionando acceso a contenido por suscripción, mediante una estructura de precios accesibles y mecanismos de contacto directo.",
-    "tecnologies": [
-      { "name": "Javascript", "icon": "mdi:nodejs" },
-      { "name": "Astro", "icon": "mdi:react" },
-      { "name": "Tailwind", "icon": "mdi:tailwind" },
-      { "name": "Typescript", "icon": "mdi:language-typescript" }
-    ]
+    "title": "Brenner Vera"
   },
   {
-    "title": "Arbisure",
-    "subtitle": "Descripción breve del proyecto",
-    "description": "Arbisure es una plataforma digital diseñada para sport traders que desean maximizar su rentabilidad mediante surebets en tiempo real. El sitio ofrece un escáner con capacidades en vivo y prematch, una calculadora inteligente y herramientas de productividad",
-    "tecnologies": [
-      { "name": "Javascript", "icon": "mdi:nodejs" },
-      { "name": "Typescript", "icon": "mdi:language-typescript" },
-      { "name": "React", "icon": "mdi:react" },
-      { "name": "NextJS", "icon": "mdi:language-html5" },
-      { "name": "Tailwind", "icon": "mdi:tailwind" }
-    ]
+    "title": "Biogenera"
   },
   {
-    "title": "Brenner Vera",
-    "subtitle": "Descripción breve del proyecto",
-    "description": "Es la plataforma profesional para emprendedores y profesionales que están interesados en generar ingresos mediante arbitraje deportivo, inversiones y crecimiento financiero.",
-    "tecnologies": [
-      { "name": "Javascript", "icon": "mdi:nodejs" },
-      { "name": "Typescript", "icon": "mdi:language-typescript" },
-      { "name": "React", "icon": "mdi:react" },
-      { "name": "NextJS", "icon": "mdi:language-html5" },
-      { "name": "Tailwind", "icon": "mdi:tailwind" }
-    ]
+    "title": "Metodo Surebet"
   },
   {
-    "title": "IPTV",
-    "subtitle": "Descripción breve del proyecto",
-    "description": "IPTV es una plataforma diseñada para el registro y activación de las diferentes cuentas de las plataformas de streaming.",
-    "tecnologies": [
-      { "name": "Javascript", "icon": "mdi:nodejs" },
-      { "name": "React", "icon": "mdi:react" },
-      { "name": "NextJS", "icon": "mdi:language-html5" },
-      { "name": "Tailwind", "icon": "mdi:tailwind" }
-    ]
-  },
-  {
-    "title": "TMoney App",
-    "subtitle": "Descripción breve del proyecto",
-    "description": "TMoney App es un aplicativo móvil, que nació de la necesidad de activar las cuentas de los nuevos usuarios que adquirian nuevos paquetes de una manera más sencilla",
-    "tecnologies": [
-      { "name": "Javascript", "icon": "mdi:nodejs" },
-      { "name": "Typescript", "icon": "mdi:language-typescript" },
-      { "name": "ReactNative", "icon": "mdi:react" },
-      { "name": "Tailwind", "icon": "mdi:tailwind" },
-      { "name": "Expo", "icon": "mdi:tailwind" }
-    ]
-  },
-  {
-    "title": "Administration App",
-    "subtitle": "Descripción breve del proyecto",
-    "description": "Este sistema administrativo se desarrolló para el manejo de las principales páginas de TMoney y Brenner Vera.",
-    "tecnologies": [
-      { "name": "Javascript", "icon": "mdi:nodejs" },
-      { "name": "Typescript", "icon": "mdi:language-typescript" },
-      { "name": "React", "icon": "mdi:react" },
-      { "name": "NextJS", "icon": "mdi:language-html5" },
-      { "name": "Tailwind", "icon": "mdi:tailwind" }
-    ]
-  },
-  {
-    "title": "Sistema de Inventario",
-    "subtitle": "Descripción breve del proyecto",
-    "description": "Este proyecto fue diseñado para brindar apoyo a los clientes al momento de hacer el inventariado, de una forma más sencilla y rápida, en los diferentes tipos de negocios.",
-    "tecnologies": [
-      { "name": "Javascript", "icon": "mdi:nodejs" },
-      { "name": "Typescript", "icon": "mdi:language-typescript" },
-      { "name": "React", "icon": "mdi:react" },
-      { "name": "NextJS", "icon": "mdi:language-html5" },
-      { "name": "Tailwind", "icon": "mdi:tailwind" }
-    ]
-  },
-  {
-    "title": "Biogenera",
-    "subtitle": "Descripción breve del proyecto",
-    "description": "LandingPage de redes sociales sobre Brenner Vera, nos abre la ventana a enlaces a su sitio web y canales de atención.",
-    "tecnologies": [
-      { "name": "Astro", "icon": "mdi:language-html5" },
-      { "name": "Javascript", "icon": "mdi:nodejs" },
-      { "name": "Typescript", "icon": "mdi:language-typescript" },
-      { "name": "Tailwind", "icon": "mdi:tailwind" }
-    ]
+    "title": "Roller Win"
   }
 ]

@@ -43,6 +43,11 @@
   font-family: RobotoCondensedRegular;
   src: url(/fonts/RobotoCondensed/RobotoCondensed-Regular.ttf);
 }
+/* FONTS BebaNeue*/
+@font-face {
+  font-family: BebasNeueRegular;
+  src: url(/fonts/Bebas_Neue/BebasNeueRegular.ttf);
+}
 html,
 body {
   margin: 0;
@@ -50,7 +55,94 @@ body {
   width: 100%;
   height: 100dvh;
   background-color: #e9d7c0;
+  scroll-behavior: smooth;
 }
 body {
-  padding: 0 96px;
+  padding-left: 96px;
+  padding-right: 96px;
+}
+/* CARD PROJECT - INTERACTIVE JS */
+#details-project {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.header-card,
+.body-card,
+.footer-card {
+  display: flex;
+  flex-direction: column;
+}
+/* HEADER */
+.title-card-project {
+  font-family: BebasNeueRegular;
+  font-size: 64px;
+  color: #000000;
+  letter-spacing: 3px;
+  margin: 0;
+  padding: 0;
+}
+.info_content {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.info_content > .info {
+  font-size: 14px;
+  font-family: OpenSansRegular;
+}
+/* BODY */
+.body-card {
+  gap: 14px;
+}
+.section {
+  width: 100%;
+  height: auto;
+  gap: 8px;
+  display: flex;
+  align-items: start;
+}
+
+.section .subtitle-card-project {
+  min-width: 15em;
+  font-size: 20px;
+  font-family: MontserratMedium;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+}
+.section .description-card-project {
+  width: 100%;
+  font-size: 14px;
+  font-family: OpenSansRegular;
+  line-height: 2.5;
+}
+.section > .badge-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+}
+.section > .badge-content .badge,
+a {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  font-size: 12px;
+  font-family: OpenSansRegular;
+  text-transform: uppercase;
+  color: black;
+  width: fit-content;
+}
+.section > .badge-content .badge:not(:first-child) {
+  padding: 0px 8px;
+}
+.footer-card > .section > subtitle-card-project a {
+  cursor: pointer;
+  text-decoration: underline;
+}
+.footer-card > .section > subtitle-card-project a:visited {
+  color: blue;
 }

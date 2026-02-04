@@ -1,38 +1,19 @@
 ---
-import { Icon } from "astro-icon/components";
-import TargetCustom from "./custom/targets/TargetCustom.astro";
+import ProyectsOrganism from "./organisms/ProyectsOrganism.astro";
 ---
 
-<section id="proyectos" class="relative w-full h-screen flex-col text-center">
-  <div class="absolute w-full top-24 flex flex-row items-end justify-between">
+<div id="proyectos" class="relative w-full h-screen py-24 flex flex-col gap-5">
+  <div class="w-full flex flex-col gap-1.5">
     <h1
-      class="title w-full text-start md:text-6xl text-[#5A3D29] font-[MontserratMedium] text-2xl uppercase"
+      class="title w-full text-start text-5xl font-[MontserratRegular] uppercase"
     >
       Proyectos
     </h1>
-    <div class="flex flex-row justify-between items-center">
-      <a
-        href="#"
-        class="w-full h-fit text-end text-[#DAA38F] tracking-wider font-bold text-sm hover:text-lg duration-300 transition-all"
-        >Ver más</a
-      >
-      <Icon name="mdi:arrow-right-thin" class="more text-[#DAA38F]" size={52} />
-    </div>
+    <span class="font-[OpenSansLight] text-sm">
+      Conoce alguno de los proyectos en los que trabajé recientemente
+    </span>
   </div>
-  <TargetCustom />
-</section>
-<script>
-  import gsap from "gsap";
-  const tl = gsap.timeline({ ease: "sine.out", duration: 0.5 });
-
-  tl.from(
-    ".title",
-    {
-      y: -20,
-      opacity: 0,
-    },
-    "+=1.5"
-  ).to(".more", {
-    autoAlpha: 1,
-  });
-</script>
+  <div class="w-full h-full">
+    <ProyectsOrganism />
+  </div>
+</div>

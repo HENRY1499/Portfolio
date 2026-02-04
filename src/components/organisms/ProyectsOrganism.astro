@@ -1,0 +1,138 @@
+---
+import BoxProyectMolecule from "../molecules/BoxProyectMolecule.astro";
+import Projects from "@/samples/Projects.json";
+---
+
+<div class="w-full h-full flex gap-24">
+  <div class="w-full h-fit grid grid-cols-6 grid-rows-2 gap-4">
+    {
+      Projects.map((project, index) => (
+        <BoxProyectMolecule data-project={index + 1} title={project.title} />
+      ))
+    }
+  </div>
+  <div
+    id="details-project"
+    class="relative w-full h-full border-2 border-dashed border-black rounded-2xl p-10"
+  >
+    <!-- <div class="header-card">
+      <h2 class="title-card-project">T-Money</h2>
+      <div class="info_content">
+        <span class="info">Página web</span>
+        <span class="info">2024</span>
+        <span class="info">ABDAK S.A.C</span>
+      </div>
+    </div>
+    <div class="body-card">
+      <div class="section">
+        <span class="subtitle-card-project">Descripcion</span>
+        <p class="description-card-project">
+          Este proyecto fue realizado con el fin de mejorar las apuestas
+          deportivas. Su principal distintivo, es que cuenta con un scanner
+          deportivo, el cual ayuda a los clientes a tener una ida mas clara de
+          cuanto se debe apostar al equipo de su elección.
+        </p>
+      </div>
+      <div class="section">
+        <span class="subtitle-card-project">Skills</span>
+        <p class="badge-content">
+          <span class="badge">ReactJS</span>
+          <span class="badge">Express</span>
+          <span class="badge">NodeJS</span>
+          <span class="badge">Tailwind</span>
+          <span class="badge">Zustand</span>
+        </p>
+      </div>
+    </div>
+    <div class="footer-card">
+      <div class="section">
+        <span class="subtitle-card-project">Enlace</span>
+        <a href="#" class="link">ReactJS</a>
+      </div>
+    </div> -->
+  </div>
+</div>
+
+<script lang="ts">
+  const data = {
+    "1": ` <div class="header-card">
+      <h2 class="title-card-project">T-Money</h2>
+      <div class="info_content">
+        <span class="info">Página web</span>
+        <span class="info">2024</span>
+        <span class="info">ABDAK S.A.C</span>
+      </div>
+    </div>
+    <div class="body-card">
+      <div class="section">
+        <span class="subtitle-card-project">Descripcion</span>
+        <p class="description-card-project">
+          Este proyecto fue realizado con el fin de mejorar las apuestas
+          deportivas. Su principal distintivo, es que cuenta con un scanner
+          deportivo, el cual ayuda a los clientes a tener una ida mas clara de
+          cuanto se debe apostar al equipo de su elección.
+        </p>
+      </div>
+      <div class="section">
+        <span class="subtitle-card-project">Skills</span>
+        <p class="badge-content">
+          <span class="badge">ReactJS</span>
+          <span class="badge">Express</span>
+          <span class="badge">NodeJS</span>
+          <span class="badge">Tailwind</span>
+          <span class="badge">Zustand</span>
+        </p>
+      </div>
+    </div>
+    <div class="footer-card">
+      <div class="section">
+        <span class="subtitle-card-project">Enlace</span>
+        <a href="#" alt="T-Money" class="link">www.tmoney.com</a>
+      </div>
+    </div>`,
+    "2": ` <div class="header-card">
+      <h2 class="title-card-project">Brenner Vera</h2>
+      <div class="info_content">
+        <span class="info">Página web</span>
+        <span class="info">2024</span>
+        <span class="info">ABDAK S.A.C</span>
+      </div>
+    </div>
+    <div class="body-card">
+      <div class="section">
+        <span class="subtitle-card-project">Descripcion</span>
+        <p class="description-card-project">
+          Plataforma web que te ofrece variedad de cursos relacionado a crecimiento financiero. Brinda cursos como arbitraje deportivo, trading y hacker financiero.
+        </p>
+      </div>
+      <div class="section">
+        <span class="subtitle-card-project">Skills</span>
+        <p class="badge-content">
+          <span class="badge">ReactJS</span>
+          <span class="badge">Express</span>
+          <span class="badge">NodeJS</span>
+          <span class="badge">Tailwind</span>
+          <span class="badge">Zustand</span>
+        </p>
+      </div>
+    </div>
+    <div class="footer-card">
+      <div class="section">
+        <span class="subtitle-card-project">Enlace</span>
+        <a href="#" class="link" alt="www.brennervera.com">Brenner Vera</a>
+      </div>
+    </div>`,
+  };
+  const projects = document.querySelectorAll("button");
+  const details_project = document.querySelector("#details-project");
+
+  projects.forEach((pro) => {
+    pro.addEventListener("click", () => {
+      const index = pro.dataset.project;
+      if (!index || !details_project) return;
+      if (details_project) {
+        details_project.innerHTML = data[index];
+      }
+    });
+  });
+</script>
