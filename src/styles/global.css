@@ -146,3 +146,28 @@ a {
 .footer-card > .section > subtitle-card-project a:visited {
   color: blue;
 }
+/* estado project*/
+
+#details-project {
+  transform: translateX(950px);
+  border: 1px solid black;
+  animation: animateActive 2s linear 0.1ms forwards;
+}
+.active:focus,
+.active {
+  background-color: darkred;
+}
+.inactive {
+  background-color: rgb(6, 145, 150);
+}
+@keyframes animateActive {
+  0% {
+    opacity: 0;
+    transform: translateX(500px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+    border-radius: 20px;
+  }
+}
