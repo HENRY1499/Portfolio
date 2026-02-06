@@ -48,6 +48,11 @@
   font-family: BebasNeueRegular;
   src: url(/fonts/Bebas_Neue/BebasNeueRegular.ttf);
 }
+/* FONTS Homemade Apple*/
+@font-face {
+  font-family: HomemadeApple;
+  src: url(/fonts/Homemade_Apple/HomemadeAppleRegular.ttf);
+}
 html,
 body {
   margin: 0;
@@ -160,6 +165,17 @@ a {
 .inactive {
   background-color: rgb(6, 145, 150);
 }
+/* ANIMACION EN PATH - EXPERIENCE */
+.circular-text-content {
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 100;
+}
+#circlePath {
+  animation: animatePath 2s linear 0.1ms forwards;
+  font-size: 15px;
+}
+
 @keyframes animateActive {
   0% {
     opacity: 0;
