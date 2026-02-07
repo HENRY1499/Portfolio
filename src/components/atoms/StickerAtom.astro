@@ -1,0 +1,32 @@
+---
+import type { HTMLAttributes } from "astro/types";
+type Props = { title: string } & HTMLAttributes<"textPath">;
+const { title, ...atrs } = Astro.props as Props;
+---
+
+<svg viewBox="0 0 200 200" width="140" height="140" class="circular-text">
+  <circle cx="100" cy="100" r="60" fill="#D2C2AD"></circle>
+  <defs>
+    <path
+      id="circlePath"
+      d="
+        M100,100
+        m-65,0
+        a65,65 0 1,1 130,0
+        a65,65 0 1,1 -130,0
+      "
+    ></path>
+  </defs>
+
+  <text class="circular-text-content">
+    <textPath
+      id="textpath"
+      href="#circlePath"
+      startOffset="50%"
+      text-anchor="middle"
+    >
+      <!-- React · React · React · React · React · React · React · React · React ~~~ -->
+      {title}
+    </textPath>
+  </text>
+</svg>
