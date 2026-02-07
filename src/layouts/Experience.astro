@@ -1,14 +1,14 @@
 ---
 import MessageAtom from "@/components/atoms/MessageAtom.astro";
-import ExperienceCardOrganism from "@/components/organisms/ExperienceCardOrganism.astro";
+import ExperienceOrganism from "@/components/organisms/ExperienceOrganism.astro";
 import SkillsOrganism from "@/components/organisms/SkillsOrganism.astro";
 ---
 
 <section
   id="experiencia"
-  class="relative h-full w-full flex flex-col items-center justify-start border"
+  class="relative w-full h-screen py-24 flex flex-col gap-5"
 >
-  <div class="absolute top-24 h-auto w-full flex flex-col items-center gap-14">
+  <div class="h-full w-full flex flex-col items-center gap-5">
     <div class="w-full flex flex-col gap-1.5">
       <h1
         class="title w-full text-start text-5xl font-[MontserratRegular] uppercase"
@@ -21,12 +21,12 @@ import SkillsOrganism from "@/components/organisms/SkillsOrganism.astro";
     </div>
 
     <div class="w-full h-full">
-      <div class="w-full grid grid-cols-2 gap-5 border">
+      <div class="w-full grid grid-cols-2">
         <SkillsOrganism />
         <MessageAtom />
       </div>
       <div class="relative w-full h-full">
-        <ExperienceCardOrganism />
+        <ExperienceOrganism />
       </div>
     </div>
   </div>
