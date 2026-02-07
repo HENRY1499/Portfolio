@@ -1,0 +1,10 @@
+---
+import type { HTMLAttributes } from "astro/types";
+type Props = HTMLAttributes<"input">;
+const { type } = Astro.props as Props;
+---
+
+<input
+  type={type}
+  class="w-full rounded-[.4em] outline-none focus:outline-2 focus:ring-2 focus:ring-[#C49381] bg-white px-4 py-2"
+/>

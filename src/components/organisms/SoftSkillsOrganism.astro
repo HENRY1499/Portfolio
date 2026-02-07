@@ -1,0 +1,8 @@
+---
+import ItemSoftSkillsMolecule from "../molecules/ItemSoftSkillsMolecule.astro";
+import SoftSkills from "../../samples/SoftSkils.json";
+---
+
+<div class="w-full h-auto flex flex-col gap-3">
+  {SoftSkills.map((item) => <ItemSoftSkillsMolecule title={item.softSkill} />)}
+</div>

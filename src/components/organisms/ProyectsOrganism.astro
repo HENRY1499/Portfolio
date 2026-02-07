@@ -11,48 +11,11 @@ import Projects from "@/samples/Projects.json";
       ))
     }
   </div>
-  <div id="details-project" class="relative w-full h-full p-10">
-    <!-- <div class="header-card">
-      <h2 class="title-card-project">T-Money</h2>
-      <div class="info_content">
-        <span class="info">Página web</span>
-        <span class="info">2024</span>
-        <span class="info">ABDAK S.A.C</span>
-      </div>
-    </div>
-    <div class="body-card">
-      <div class="section">
-        <span class="subtitle-card-project">Descripcion</span>
-        <p class="description-card-project">
-          Este proyecto fue realizado con el fin de mejorar las apuestas
-          deportivas. Su principal distintivo, es que cuenta con un scanner
-          deportivo, el cual ayuda a los clientes a tener una ida mas clara de
-          cuanto se debe apostar al equipo de su elección.
-        </p>
-      </div>
-      <div class="section">
-        <span class="subtitle-card-project">Skills</span>
-        <p class="badge-content">
-          <span class="badge">ReactJS</span>
-          <span class="badge">Express</span>
-          <span class="badge">NodeJS</span>
-          <span class="badge">Tailwind</span>
-          <span class="badge">Zustand</span>
-        </p>
-      </div>
-    </div>
-    <div class="footer-card">
-      <div class="section">
-        <span class="subtitle-card-project">Enlace</span>
-        <a href="#" class="link">ReactJS</a>
-      </div>
-    </div> -->
-  </div>
-</div>
+  <div id="details-project" class="relative w-full h-full p-10"></div>
 
-<script is:inline lang="ts">
-  const data = {
-    1: ` <div class="header-card">
+  <script is:inline lang="ts">
+    const data = {
+      1: ` <div class="header-card">
       <h2 class="title-card-project">T-Money</h2>
       <div class="info_content">
         <span class="info">Página web</span>
@@ -87,7 +50,7 @@ import Projects from "@/samples/Projects.json";
         <a href="#" alt="T-Money" class="link" >www.tmoney.com</a>
       </div>
     </div>`,
-    2: ` <div class="header-card">
+      2: ` <div class="header-card">
       <h2 class="title-card-project">Brenner Vera</h2>
       <div class="info_content">
         <span class="info">Página web</span>
@@ -119,7 +82,7 @@ import Projects from "@/samples/Projects.json";
         <a href="#" class="link" alt="www.brennervera.com">Brenner Vera</a>
       </div>
     </div>`,
-    3: ` <div class="header-card">
+      3: ` <div class="header-card">
       <h2 class="title-card-project">Genera más pro</h2>
       <div class="info_content">
         <span class="info">Página web</span>
@@ -149,7 +112,7 @@ import Projects from "@/samples/Projects.json";
         <a href="#" class="link" alt="https://bio.generamaspro.com/">Genera Más Pro</a>
       </div>
     </div>`,
-    4: ` <div class="header-card">
+      4: ` <div class="header-card">
       <h2 class="title-card-project">metodo surebet</h2>
       <div class="info_content">
         <span class="info">Página web</span>
@@ -182,7 +145,7 @@ import Projects from "@/samples/Projects.json";
         <a href="#" class="link" alt="https://metodosurebet.com/funnel/registro/">Metodo Surebet</a>
       </div>
     </div>`,
-    5: ` <div class="header-card">
+      5: ` <div class="header-card">
       <h2 class="title-card-project">roller win</h2>
       <div class="info_content">
         <span class="info">Página web</span>
@@ -214,28 +177,29 @@ import Projects from "@/samples/Projects.json";
         <a href="#" class="link" alt="muy pronto">Roller Win</a>
       </div>
     </div>`,
-  };
+    };
 
-  const projects = document.querySelectorAll("button");
-  const details_project = document.querySelector("#details-project");
+    const projects = document.querySelectorAll("button");
+    const details_project = document.querySelector("#details-project");
 
-  // Tomo el primero (0+1) del array
-  if (details_project && projects.length > 0) {
-    const firstElement = projects[1].dataset.project;
-    if (firstElement) {
-      details_project.innerHTML = data[firstElement];
-      projects[1].classList.add("active");
+    // Tomo el primero (0+1) del array
+    if (details_project && projects.length > 0) {
+      const firstElement = projects[1].dataset.project;
+      if (firstElement) {
+        details_project.innerHTML = data[firstElement];
+        projects[1].classList.add("active");
+      }
     }
-  }
 
-  projects.forEach((pro) => {
-    pro.addEventListener("click", () => {
-      const index = pro.dataset.project;
-      if (!index || !details_project) return;
+    projects.forEach((pro) => {
+      pro.addEventListener("click", () => {
+        const index = pro.dataset.project;
+        if (!index || !details_project) return;
 
-      details_project.innerHTML = data[index];
-      projects.forEach((p) => p.classList.remove("active"));
-      pro.classList.add("active");
+        details_project.innerHTML = data[index];
+        projects.forEach((p) => p.classList.remove("active"));
+        pro.classList.add("active");
+      });
     });
-  });
-</script>
+  </script>
+</div>

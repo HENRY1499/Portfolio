@@ -1,0 +1,26 @@
+---
+import FormContactOrganism from "@/components/organisms/FormContactOrganism.astro";
+import SoftSkillsOrganism from "@/components/organisms/SoftSkillsOrganism.astro";
+---
+
+<div
+  id="proyectos"
+  class="relative w-screen h-screen left-1/2 -translate-x-1/2 px-24 py-24 flex flex-col gap-5 overflow-x-hidden bg-[#5A3D29]"
+>
+  <div class="w-full flex flex-col gap-1.5">
+    <h1
+      class="font-[MontserratBold] text-8xl text-[#000] tracking-wider uppercase"
+    >
+      Contactame
+    </h1>
+    <span class="font-[OpenSansLight] text-lg">
+      Llena el formulario y cuéntame en como puedo ayudarte. Transformo ideas en
+      experiencias digitales funcionales y atractivas. Ya sea diseño UI/UX o
+      desarrollo web moderno, estoy listo para colaborar contigo.
+    </span>
+  </div>
+  <div class="w-full h-full flex gap-96">
+    <SoftSkillsOrganism />
+    <FormContactOrganism />
+  </div>
+</div>
