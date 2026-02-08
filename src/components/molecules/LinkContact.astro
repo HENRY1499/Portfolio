@@ -1,0 +1,12 @@
+---
+import type { HTMLAttributes } from "astro/types";
+type Props = { svg: string } & HTMLAttributes<"div">;
+const { title, svg } = Astro.props as Props;
+---
+
+<div class="flex flex-col gap-5">
+  <div class="flex items-center gap-2">
+    <img src={svg} />
+    <span class="text-white">{title}</span>
+  </div>
+</div>

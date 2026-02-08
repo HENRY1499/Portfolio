@@ -1,6 +1,8 @@
 ---
+import ContactMeOrganism from "@/components/organisms/ContactMeOrganism.astro";
 import FormContactOrganism from "@/components/organisms/FormContactOrganism.astro";
 import SoftSkillsOrganism from "@/components/organisms/SoftSkillsOrganism.astro";
+import CopyrightTextAtom from "@/components/atoms/CopyrightTextAtom.astro";
 ---
 
 <div
@@ -20,7 +22,13 @@ import SoftSkillsOrganism from "@/components/organisms/SoftSkillsOrganism.astro"
     </span>
   </div>
   <div class="w-full h-full flex gap-96">
-    <SoftSkillsOrganism />
+    <div class="w-full flex flex-col justify-between">
+      <SoftSkillsOrganism />
+      <div class="flex flex-col gap-12">
+        <ContactMeOrganism />
+        <CopyrightTextAtom />
+      </div>
+    </div>
     <FormContactOrganism />
   </div>
 </div>
