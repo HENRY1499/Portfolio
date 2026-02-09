@@ -2,10 +2,11 @@
 import ButtonAtom from "@/components/atoms/ButtonAtom.astro";
 import IconAtom from "@/components/atoms/IconAtom.astro";
 import ScrollhintMolecule from "@/components/molecules/ScrollhintMolecule.astro";
+import SliderOrganism from "@/components/organisms/SliderOrganism.astro";
 ---
 
 <div class="w-full h-screen">
-  <div class="w-full">
+  <div class="w-screen relative left-1/2 -translate-x-1/2">
     <IconAtom />
     <div class="absolute top-0 left-0 w-full p-24 h-full">
       <div class="flex flex-col items-end h-full justify-between">
@@ -23,7 +24,7 @@ import ScrollhintMolecule from "@/components/molecules/ScrollhintMolecule.astro"
         <ButtonAtom title={"Descargar CV"} style="w-fit" />
         <div class="w-full h-auto">
           <div class="flex justify-between items-center">
-            <span>Slider Tecnologia</span>
+            <SliderOrganism />
             <ScrollhintMolecule />
           </div>
         </div>
