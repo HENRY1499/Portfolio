@@ -1,0 +1,29 @@
+---
+import GroupGraf from "../molecules/GroupGraf.astro";
+import HeaderMolecule from "../molecules/HeaderMolecule.astro";
+import PhotoNameMolecule from "../molecules/PhotoNameMolecule.astro";
+---
+
+<div class="bg-[#EFF3F1] relative left-1/2 -translate-x-1/2 w-screen p-24">
+  <HeaderMolecule title={"Sobre Mi"} />
+  <div class="w-full flex flex-row">
+    <div class="w-full flex flex-col gap-5">
+      <span class="font-[OpenSansRegular] text-2xl tracking-wider leading-12"
+        >Soy Programador Web Frontend y Diseñador UX/UI enfocado en el diseño y
+        desarrollo de experiencias web y móviles, cuidando tanto el diseño como
+        la implementación.</span
+      >
+      <span class="font-[OpenSansRegular] text-2xl tracking-wider leading-12"
+        >Cuento con 3 años de experiencia desarrollando aplicaciones web
+        escalables, con un diseño moderno, interactivo e intuitiva, de forma
+        funcional.
+      </span>
+      <span class="font-[OpenSansRegular] text-2xl tracking-wider leading-12"
+        >Tengo conocimientos en backend para integrar servicios de forma
+        eficiente.</span
+      >
+    </div>
+    <GroupGraf />
+  </div>
+  <PhotoNameMolecule />
+</div>

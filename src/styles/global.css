@@ -200,7 +200,55 @@ a {
 textarea {
   resize: vertical;
 }
-
+/* incon random */
+.icons-wrapper {
+  position: relative;
+  width: 30%;
+  height: 250px;
+}
+.icon {
+  position: absolute;
+  opacity: 0.25;
+  animation: icons 3000ms ease-in-out infinite;
+}
+/* posiciones “aleatorias” pero pensadas */
+.ibd {
+  top: 10%;
+  left: 5%;
+}
+.icss {
+  top: 65%;
+  left: 40%;
+}
+.ihtml {
+  top: 25%;
+  left: 45%;
+}
+.ijs {
+  top: 15%;
+  left: 80%;
+}
+.ipencil {
+  bottom: 0%;
+  left: 55%;
+}
+.ireact {
+  top: 80%;
+  left: 25%;
+}
+.itailwind {
+  top: 75%;
+  left: 15%;
+}
+.itype {
+  bottom: 10%;
+  right: 5%;
+}
+/* PHOTO AND NAME */
+.about_name {
+  font-size: 11rem;
+  line-height: 8rem;
+}
 @keyframes animatePath {
   0% {
     transform: rotate(360deg);
@@ -215,5 +263,16 @@ textarea {
     opacity: 1;
     transform: translateX(0px);
     border-radius: 20px;
+  }
+}
+@keyframes icons {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+  100% {
+    transform: translateY(0px);
   }
 }

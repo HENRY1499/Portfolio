@@ -1,0 +1,16 @@
+---
+import type { HTMLAttributes } from "astro/types";
+type Props = HTMLAttributes<"div">;
+const { title } = Astro.props as Props;
+---
+
+<div class="w-full h-auto">
+  <div class="flex items-center gap-16">
+    <div class="w-10/12 border-2 border-[#9B7D61]"></div>
+    <span
+      class="w-[4em] text-end font-[BebasNeueRegular] text-8xl uppercase tracking-wider"
+    >
+      {title}
+    </span>
+  </div>
+</div>
