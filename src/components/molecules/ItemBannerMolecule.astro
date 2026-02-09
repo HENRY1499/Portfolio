@@ -1,0 +1,12 @@
+---
+import type { HTMLAttributes } from "astro/types";
+type Props = { num_year: number; description: string } & HTMLAttributes<"p">;
+const { num_year, title, description } = Astro.props as Props;
+---
+
+<div class="relative w-fit h-full flex flex-col gap-4 px-24">
+  <slot />
+  <p class="font-[MontserratRegular] text-5xl">{num_year} +</p>
+  <h1 class="font-[MontserratMedium] text-2xl">{title}</h1>
+  <span class="w-10/12 font-[OpenSansLight] text-xl">{description}</span>
+</div>

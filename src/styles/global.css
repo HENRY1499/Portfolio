@@ -159,7 +159,9 @@ a {
 }
 .active:focus,
 .active {
-  background-color: darkred;
+  border: 2px solid #92795d;
+  color: #92795d !important;
+  background-color: transparent;
 }
 
 /* ANIMACION EN PATH - EXPERIENCE */
@@ -198,6 +200,7 @@ a {
 textarea {
   resize: vertical;
 }
+
 @keyframes animatePath {
   0% {
     transform: rotate(360deg);

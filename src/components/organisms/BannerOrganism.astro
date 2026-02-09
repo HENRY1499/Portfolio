@@ -1,0 +1,31 @@
+---
+import ItemBannerMolecule from "../molecules/ItemBannerMolecule.astro";
+import ReactAtom from "../atoms/ReactAtom.astro";
+import FigmaAtom from "../atoms/FigmaAtom.astro";
+import NodejsAtom from "../atoms/NodejsAtom.astro";
+---
+
+<div
+  class="w-screen h-fit relative left-1/2 -translate-x-1/2 p-24 bg-[#eff3f1]"
+>
+  <div class="flex justify-center items-center">
+    <ItemBannerMolecule
+      num_year={3}
+      title={"Desarollo React"}
+      description="Programando páginas web modernas con React de forma segura y escalable."
+      ><ReactAtom style="absolute top-0 right-5 -z-10" /></ItemBannerMolecule
+    >
+    <ItemBannerMolecule
+      num_year={1}
+      title={"Creando Interfaces"}
+      description="Diseño intuitivo de UI/UX, plasmando ideas creativas en el Figma."
+      ><FigmaAtom style="absolute top-0 right-5 -z-10" /></ItemBannerMolecule
+    >
+    <ItemBannerMolecule
+      num_year={1.5}
+      title={"Servicios Backend"}
+      description="Desarrollo API’s seguras con NODEJS y EXPRESS."
+      ><NodejsAtom style="absolute top-0 right-5 -z-10" /></ItemBannerMolecule
+    >
+  </div>
+</div>
