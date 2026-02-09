@@ -4,7 +4,7 @@ type Props = { num_year: number; description: string } & HTMLAttributes<"p">;
 const { num_year, title, description } = Astro.props as Props;
 ---
 
-<div class="relative w-fit h-full flex flex-col gap-4 px-24">
+<div class="relative w-fit h-full flex flex-col gap-4 px-20">
   <slot />
   <p class="font-[MontserratRegular] text-5xl">{num_year} +</p>
   <h1 class="font-[MontserratMedium] text-2xl">{title}</h1>
