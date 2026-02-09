@@ -1,2 +1,37 @@
 ---
+import AboutAtom from "../atoms/Navbar/AboutAtom.astro";
+import ContactAtom from "../atoms/Navbar/ContactAtom.astro";
+import ExpAtom from "../atoms/Navbar/ExpAtom.astro";
+import HomeAtom from "../atoms/Navbar/HomeAtom.astro";
+import WorkAtom from "../atoms/Navbar/WorkAtom.astro";
 ---
+
+<nav class="w-auto h-auto rounded-full z-50 p-3 bg-[#92ADA4]">
+  <ul class="w-full flex flex-col gap-3">
+    <li>
+      <a href="#">
+        <HomeAtom />
+      </a>
+    </li>
+    <li>
+      <a href="#"><WorkAtom /></a>
+    </li>
+    <li>
+      <a href="#"><ExpAtom /></a>
+    </li>
+    <li>
+      <a href="#"><AboutAtom /></a>
+    </li>
+    <li>
+      <a href="#"><ContactAtom /></a>
+    </li>
+  </ul>
+</nav>
+
+<script>
+  const home = document.getElementById("Home");
+  const project = document.getElementById("Home");
+  const experience = document.getElementById("exp");
+  const about = document.getElementById("about");
+  const contact = document.getElementById("about");
+</script>
