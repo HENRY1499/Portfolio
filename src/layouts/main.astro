@@ -1,5 +1,4 @@
 ---
-import Navbar from "src/components/Navbar.astro";
 import "../styles/global.css";
 import NavOrganisms from "@/components/organisms/NavOrganisms.astro";
 ---
@@ -13,7 +12,7 @@ import NavOrganisms from "@/components/organisms/NavOrganisms.astro";
     <meta name="generator" content={Astro.generator} />
     <title>Henry Castillo - Dev</title>
   </head>
-  <body>
+  <body data-theme="dark">
     <NavOrganisms />
     <slot />
   </body>

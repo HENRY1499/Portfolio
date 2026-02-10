@@ -4,9 +4,10 @@ import ContactAtom from "../atoms/Navbar/ContactAtom.astro";
 import ExpAtom from "../atoms/Navbar/ExpAtom.astro";
 import HomeAtom from "../atoms/Navbar/HomeAtom.astro";
 import WorkAtom from "../atoms/Navbar/WorkAtom.astro";
+import SwitchMolecule from "../molecules/SwitchMolecule.astro";
 ---
 
-<nav id="navbar" class="w-auto h-auto rounded-full z-50 p-4 bg-[#92ADA4]">
+<nav id="navbar" class="w-auto h-auto rounded-full z-50 p-3 bg-[#92ADA4]">
   <ul class="w-full flex flex-col gap-3">
     <li>
       <a data-id="home" href="#">
@@ -25,6 +26,7 @@ import WorkAtom from "../atoms/Navbar/WorkAtom.astro";
     <li>
       <a data-id="contact" href="#"><ContactAtom /></a>
     </li>
+    <SwitchMolecule />
   </ul>
 </nav>
 
