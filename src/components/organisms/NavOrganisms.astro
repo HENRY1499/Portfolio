@@ -6,32 +6,46 @@ import HomeAtom from "../atoms/Navbar/HomeAtom.astro";
 import WorkAtom from "../atoms/Navbar/WorkAtom.astro";
 ---
 
-<nav class="w-auto h-auto rounded-full z-50 p-3 bg-[#92ADA4]">
+<nav id="navbar" class="w-auto h-auto rounded-full z-50 p-4 bg-[#92ADA4]">
   <ul class="w-full flex flex-col gap-3">
     <li>
-      <a href="#">
+      <a data-id="home" href="#">
         <HomeAtom />
       </a>
     </li>
     <li>
-      <a href="#"><WorkAtom /></a>
+      <a data-id="project" href="#"><WorkAtom /></a>
     </li>
     <li>
-      <a href="#"><ExpAtom /></a>
+      <a data-id="exp" href="#"><ExpAtom /></a>
     </li>
     <li>
-      <a href="#"><AboutAtom /></a>
+      <a data-id="about" href="#"><AboutAtom /></a>
     </li>
     <li>
-      <a href="#"><ContactAtom /></a>
+      <a data-id="contact" href="#"><ContactAtom /></a>
     </li>
   </ul>
 </nav>
 
 <script>
-  const home = document.getElementById("Home");
-  const project = document.getElementById("Home");
-  const experience = document.getElementById("exp");
-  const about = document.getElementById("about");
-  const contact = document.getElementById("about");
+  import gsap from "gsap";
+  import ScrollTrigger from "gsap/ScrollTrigger";
+  gsap.registerPlugin(ScrollTrigger);
+
+  const links = document.querySelectorAll<HTMLAnchorElement>(
+    "nav ul li a[data-id]",
+  );
+
+  window.addEventListener("DOMContentLoaded", () => {
+    // etiqueta <a>
+    links.forEach((link) => {
+      link.addEventListener("click", () => {
+        const id = link.dataset.id;
+        if (id) {
+          document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+        }
+      });
+    });
+  });
 </script>

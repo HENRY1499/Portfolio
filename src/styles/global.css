@@ -71,13 +71,19 @@ body {
 nav {
   position: fixed;
   top: 23em;
-  left: -40px;
+  left: -60px;
 }
+
 nav {
-  animation: animation-slider 3000ms linear forwards;
+  animation: animation-nav 300ms linear forwards;
 }
 
 nav li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+  padding: 0.4em;
   transition: transform 0.2s ease-in-out;
 }
 
@@ -98,8 +104,11 @@ nav a:hover > span {
 nav a svg {
   stroke: #92ada4;
 }
+.nav-hidden {
+  opacity: 0;
+}
 /* CARD PROJECT - INTERACTIVE JS */
-#details-project {
+#details-project-content {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -185,7 +194,7 @@ a {
 }
 /* estado project*/
 
-#details-project {
+#details-project-content {
   transform: translateX(950px);
   border: 1px solid black;
   animation: animateActive 2s linear 0.1ms forwards;
@@ -335,7 +344,7 @@ textarea {
     transform: translateX(-100%);
   }
 }
-@keyframes animation-slider {
+@keyframes animation-nav {
   0% {
     transform: translateX(0%);
   }

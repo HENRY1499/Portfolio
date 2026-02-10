@@ -11,7 +11,8 @@ import Projects from "@/samples/Projects.json";
       ))
     }
   </div>
-  <div id="details-project" class="relative w-full h-full p-10"></div>
+  <section id="details-project-content" class="relative w-full h-full p-10">
+  </section>
 
   <script is:inline lang="ts">
     const data = {
@@ -180,7 +181,7 @@ import Projects from "@/samples/Projects.json";
     };
 
     const projects = document.querySelectorAll("button");
-    const details_project = document.querySelector("#details-project");
+    const details_project = document.querySelector("#details-project-content");
 
     // Tomo el primero (0+1) del array
     if (details_project && projects.length > 0) {
