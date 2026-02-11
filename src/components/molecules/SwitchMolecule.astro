@@ -1,5 +1,29 @@
+---
+
+---
+
 <div
-  class="relative w-auto min-h-15 flex flex-col justify-center items-center p-1 border rounded-full bg-bg-switch"
+  class="relative w-full min-h-12 p-1 rounded-full bg-switch transition-colors duration-300"
 >
-  <div class="w-6 h-6 rounded-full absolute top-1 left-[.3em] bg-red-400"></div>
+  <button
+    class="w-4 h-4 rounded-full absolute top-1 left-[.2em] bg-toogle toggle-btn transition-transform duration-300"
+  >
+  </button>
+
+  <script>
+    const switcher = document.querySelector(".toggle-btn");
+    const root = document.documentElement;
+    const savedTheme = localStorage.getItem("theme");
+
+    if (savedTheme) {
+      root.setAttribute("data-theme", savedTheme);
+    }
+
+    switcher?.addEventListener("click", () => {
+      const currentTheme = root.getAttribute("data-theme");
+      const newTheme = currentTheme === "dark" ? "light" : "dark";
+      root.setAttribute("data-theme", newTheme);
+      localStorage.setItem("theme", newTheme);
+    });
+  </script>
 </div>

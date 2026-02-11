@@ -1,126 +1,163 @@
 @import "tailwindcss";
+@theme {
+  /* Background */
+  --color-primary: var(--bg-primary);
+  --color-switch: var(--sw-primary-bg);
+  --color-toogle: var(--sw-toogle-bg);
+  --color-footer: var(--bg-footer);
+  --color-btn: var(--btn-primary-bg);
+  --color-btn-hover: var(--btn-primary-bg-hover);
+  --color-active: var(--btn-bg-active);
+  --color-inactive: var(--btn-bg-inactive);
+  --color-icon: var(--icon-primary-bg);
+  --color-banner: var(--banner-primary-bg);
+  --color-navbar: var(--nav-primary-bg);
+  --color-card: var(--card-primary-bg);
+  --color-border-dashed: var(--border-dashed);
+  --color-border-left: var(--border-left);
+
+  /* Text */
+  --text-icon-svg: var(--icon-primary-svg);
+  --text-icon: var(--icon-primary-label);
+  --text-banner-svg: var(--banner-primary-svg);
+  --text-banner: var(--banner-primary-label);
+  --text-primary: var(--text-primary);
+  --text-secondary: var(--text-secondary);
+  --text-thirty: var(--text-thirty);
+  --text-name: var(--text-name);
+  --text-exp: var(--text-exp);
+  --text-button: var(--btn-primary-label);
+  --text-active: var(--btn-bg-active);
+  --text-inactive: var(--btn-bg-inactive);
+  --text-toogle: var(--btn-bg-active);
+
+  /* Shadow */
+  --shadow-xs: var(--shadow-xs);
+}
 
 :root {
   /* BG Generales */
-  --color-bg-primary: #e9d7c0;
-  --color-bg-project: #72614b;
-  --color-bg-exp: #46382c;
-  --color-bg-badge-exp: #c43981;
-  --color-bg-about: #eff3f1;
-  --color-bg-footer: #4c3932;
-  --color-bg-slider-skills: #afa190; /*por sicaso*/
-  --color-bg-light: #e9d7c0;
+  --bg-primary: #e9d7c0;
+  --bg-project: #72614b;
+  --bg-exp: #46382c;
+  --bg-badge-exp: #c43981;
+  --bg-about: #eff3f1;
+  --bg-footer: #4c3932;
+  --bg-slider-skills: #afa190; /*por sicaso*/
+  --bg-light: #e9d7c0;
 
   /* ICONS */
-  --color-icon-primary-bg: #ffff;
-  --color-icon-primary-svg: #92ada4;
-  --color-icon-primary-label: #839c94; /*Cuando haya label*/
+  --icon-primary-bg: #ffff;
+  --icon-primary-svg: #92ada4;
+  --icon-primary-label: #839c94; /*Cuando haya label*/
 
   /* Text */
-  --color-text-primary: #46382c;
-  --color-text-secondary: #f4e2dc;
-  --color-text-thirty: #745e49;
-  --color-text-name: #dde6e3;
-  --color-text-exp: #8c8173;
+  --text-primary: #46382c;
+  --text-secondary: #f4e2dc;
+  --text-thirty: #745e49;
+  --text-name: #dde6e3;
+  --text-exp: #8c8173;
 
   /* Banner */
-  --color-banner-primary-label: #92ada4;
-  --color-banner-primary-bg: #eff3f1;
-  --color-banner-primary-svg: #dde6e3;
+  --banner-primary-label: #92ada4;
+  --banner-primary-bg: #eff3f1;
+  --banner-primary-svg: #dde6e3;
 
   /*  Shadown */
-  --color-shadow-xs: #e9d7c0;
+  --shadow-xs: #e9d7c0;
 
   /* Button CTA*/
-  --color-btn-primary-bg: #fbf6f4;
-  --color-btn-primary-bg-hover: #ffff;
-  --color-btn-primary-label: #ae8272;
+  --btn-primary-bg: #fbf6f4;
+  --btn-primary-bg-hover: #ffff;
+  --btn-primary-label: #ae8272;
 
   /* Button Enlaces (Links) */
-  --color-btn-link-bg: #758a73;
-  --color-btn-link-label: #ffff;
-  --color-btn-link-hover: #92ada4;
+  --btn-link-bg: #758a73;
+  --btn-link-label: #ffff;
+  --btn-link-hover: #92ada4;
 
   /* Button Proyect */
-  --color-btn-bg-active: #524b43;
-  --color-btn-bg-inactive: #f4e2dc;
-  --color-btn-text-active: var(--color-btn-bg-active);
-  --color-btn-text-inactive: var(--color-btn-bg-inactive);
+  --btn-bg-active: #524b43;
+  --btn-bg-inactive: #f4e2dc;
+  --btn-text-active: var(--btn-bg-active);
+  --btn-text-inactive: var(--btn-bg-inactive);
 
   /* Navbar */
-  --color-nav-primary-bg: #f4f7f6;
+  --nav-primary-bg: #f4f7f6;
 
   /* Switch */
-  --color-sw-primary-bg: #afa190;
+  --sw-primary-bg: #afa190;
+  --sw-toogle-bg: #4c3932;
 
   /* Border */
-  --color-border-dashed: #baac9a;
-  --color-border-left: #daa38f;
-  --color-border-shadow-left: #ffff;
+  --border-dashed: #baac9a;
+  --border-left: #daa38f;
+  --border-shadow-left: #ffff;
 
   /* Card  */
 
-  --color-card-primary-bg: #f0ece7;
-  --color-card-primary-label: #758a83;
-  --color-card-primary-title: #ffff;
+  --card-primary-bg: #f0ece7;
+  --card-primary-label: #758a83;
+  --card-primary-title: #ffff;
 }
 [data-theme="dark"] {
   /* BG Generales */
-  --color-bg-primary: #524b43;
-  --color-bg-project: #afa190;
-  --color-bg-exp: #586862;
-  --color-bg-badge-exp: #d2c2ad;
-  --color-bg-about: #524b43;
-  --color-bg-footer: #4c3932;
-  --color-bg-slider-skills: #ffff; /*por sicaso*/
-  --color-bg-light: #fed8a6;
+  --bg-primary: #524b43;
+  --bg-project: #afa190;
+  --bg-exp: #586862;
+  --bg-badge-exp: #d2c2ad;
+  --bg-about: #524b43;
+  --bg-footer: #4c3932;
+  --bg-slider-skills: #ffff; /*por sicaso*/
+  --bg-light: #fed8a6;
 
   /* ICONS */
-  --color-icon-primary-bg: #afa190;
-  --color-icon-primary-svg: #f0ece7;
-  --color-icon-primary-label: #f0ece7; /*Cuando haya label*/
+  --icon-primary-bg: #afa190;
+  --icon-primary-svg: #f0ece7;
+  --icon-primary-label: #f0ece7; /*Cuando haya label*/
 
   /* Text */
-  --color-text-primary: #e0d7ce;
-  --color-text-secondary: #e0d7ce;
-  --color-text-thirty: #f0ece7;
-  --color-text-name: #696156;
-  --color-text-exp: #baac9a;
+  --text-primary: #e0d7ce;
+  --text-secondary: #e0d7ce;
+  --text-thirty: #f0ece7;
+  --text-name: #696156;
+  --text-exp: #baac9a;
 
   /* Banner */
-  --color-banner-primary-label: #f4f7f6;
-  --color-banner-primary-bg: #92ada4;
-  --color-banner-primary-svg: #839c94;
+  --banner-primary-label: #f4f7f6;
+  --banner-primary-bg: #92ada4;
+  --banner-primary-svg: #839c94;
 
   /*  Shadown */
-  --color-shadow-xs: #fed8a6;
+  --shadow-xs: #fed8a6;
 
   /* Button CTA*/
-  --color-btn-primary-bg: #8c7157;
-  --color-btn-primary-bg-hover: #ffff;
-  --color-btn-primary-label: #fbf6f4;
+  --btn-primary-bg: #8c7157;
+  --btn-primary-bg-hover: #ffff;
+  --btn-primary-label: #fbf6f4;
 
   /* Button Enlaces (Links) */
-  --color-btn-link-bg: #758a83;
-  --color-btn-link-label: #ffff;
-  --color-btn-link-hover: #6e827b;
+  --btn-link-bg: #758a83;
+  --btn-link-label: #ffff;
+  --btn-link-hover: #6e827b;
 
   /* Navbar */
-  --color-nav-primary-bg: #92ada4;
+  --nav-primary-bg: #92ada4;
 
   /* Switch */
-  --color-sw-primary-bg: #524b43;
+  --sw-primary-bg: #524b43;
+  --sw-toogle-bg: #fbf6f4;
 
   /* Border */
-  --color-border-dashed: #696156;
-  --color-border-left: #f4e2dc;
-  --color-border-shadow-left: #ffff;
+  --border-dashed: #696156;
+  --border-left: #f4e2dc;
+  --border-shadow-left: #ffff;
 
   /* Card  */
 
-  --color-card-primary-bg: #696156;
-  --color-card-primary-label: #fff;
-  --color-card-primary-title: #ffff;
+  --card-primary-bg: #696156;
+  --card-primary-label: #fff;
+  --card-primary-title: #ffff;
 }
 
 /* FONTS MONTSERRAT*/
@@ -182,7 +219,7 @@ body {
   padding: 0;
   width: 100%;
   height: 100dvh;
-  background-color: var(--color-bg-primary);
+  background-color: var(--bg-primary);
   overflow-x: hidden;
 }
 body {
@@ -193,7 +230,7 @@ body {
 /* NAVBAR */
 nav {
   position: fixed;
-  top: 23em;
+  top: 20em;
   left: -50px;
 }
 
@@ -210,7 +247,7 @@ nav li {
   transition: transform 0.2s ease-in-out;
 }
 
-nav li:hover {
+nav li:hover:not(:last-child) {
   transform: scale(1.1);
   border-radius: 100%;
   background-color: white;
@@ -431,8 +468,13 @@ textarea {
   );
 }
 .slide {
-  opacity: 0.5;
+  opacity: 0.8;
   white-space: nowrap;
+}
+
+/* Toogle */
+[data-theme="dark"] .toggle-btn {
+  transform: translateY(1.5rem);
 }
 
 @keyframes animatePath {
