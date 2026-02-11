@@ -7,7 +7,10 @@ import WorkAtom from "../atoms/Navbar/WorkAtom.astro";
 import SwitchMolecule from "../molecules/SwitchMolecule.astro";
 ---
 
-<nav id="navbar" class="w-auto h-auto rounded-full z-50 p-3 bg-navbar">
+<nav
+  id="navbar"
+  class="md:block w-auto h-auto rounded-full z-50 p-3 bg-navbar hidden"
+>
   <ul class="w-full flex flex-col gap-3">
     <li>
       <a data-id="home" href="#">

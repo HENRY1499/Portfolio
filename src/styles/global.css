@@ -218,6 +218,7 @@
   font-family: HomemadeApple;
   src: url(/fonts/Homemade_Apple/HomemadeAppleRegular.ttf);
 }
+
 * {
   transition:
     background-color 200ms linear 0.1s,
@@ -233,11 +234,13 @@ body {
   background-color: var(--bg-primary);
   overflow-x: hidden;
 }
+
 body {
   position: relative;
   padding-left: 96px;
   padding-right: 96px;
 }
+
 /* NAVBAR */
 nav {
   position: fixed;
@@ -473,8 +476,8 @@ textarea {
   mask-image: linear-gradient(
     to right,
     transparent,
-    black 70%,
-    black 90%,
+    #524b43 70%,
+    #524b43 90%,
     transparent
   );
 }
@@ -486,6 +489,20 @@ textarea {
 /* Toogle */
 [data-theme="dark"] .toggle-btn {
   transform: translateY(1.5rem);
+}
+
+@media (max-width: 647px) {
+  body {
+    padding: 0px !important;
+  }
+  .slide {
+    opacity: 0.8;
+    white-space: nowrap;
+  }
+  /* Slider animate */
+  .animate_slider {
+    animation: animate_slider 15s linear infinite;
+  }
 }
 
 @keyframes animatePath {
