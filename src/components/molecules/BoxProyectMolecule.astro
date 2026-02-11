@@ -4,10 +4,13 @@ type Props = HTMLAttributes<"div">;
 const { title, ...atrs } = Astro.props as Props;
 ---
 
-<button {...atrs} class="w-30 h-30 bg-black rounded-2xl">
+<button
+  {...atrs}
+  class="md:w-30 md:h-30 w-20 h-20 rounded-2xl bg-inactive/40 px-2"
+>
   <div class="w-full h-full flex items-center">
     <span
-      class="w-full text-white font-[OpenSansBold] text-lg text-center uppercase"
+      class="md:text-lg w-full font-[OpenSansBold] text-[10px] text-inactive text-center uppercase"
     >
       {title}
     </span>

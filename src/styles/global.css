@@ -17,7 +17,7 @@
   --color-banner: var(--banner-primary-bg);
   --color-navbar: var(--nav-primary-bg);
   --color-card: var(--card-primary-bg);
-  --color-border-dashed: var(--border-dashed);
+  --color-border: var(--border-dashed);
   --color-border-left: var(--border-left);
 
   /* Text */
@@ -30,7 +30,7 @@
   --color-thirty: var(--text-thirty);
   --color-name: var(--text-name);
   --color-exp: var(--text-exp);
-  --color-button: var(--btn-primary-label);
+  --color-button: var(--btn-cta-label);
   --color-text-active: var(--btn-bg-active);
   --color-text-inactive: var(--btn-bg-inactive);
 
@@ -286,6 +286,12 @@ nav a svg {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  border: 1px solid var(--color-xs);
+  min-height: 30rem;
+  border-radius: 20px;
+  box-shadow: 0 0 10px var(--color-xs);
+  transform: translateX(950px);
+  animation: animateActive 2s linear 0.1ms forwards;
 }
 
 .header-card,
@@ -370,7 +376,7 @@ a {
 
 #details-project-content {
   transform: translateX(950px);
-  border: 1px solid black;
+  border: 1px solid var(--color-xs);
   animation: animateActive 2s linear 0.1ms forwards;
 }
 .active:focus,
@@ -503,6 +509,97 @@ textarea {
   .animate_slider {
     animation: animate_slider 15s linear infinite;
   }
+  /* CARD PROJECT - INTERACTIVE JS */
+  #details-project-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid var(--color-border);
+    min-height: 30rem;
+    border-radius: 20px;
+    box-shadow: var(--color-xs);
+  }
+
+  .header-card,
+  .body-card,
+  .footer-card {
+    display: flex;
+    flex-direction: column;
+  }
+  /* HEADER */
+  .title-card-project {
+    font-family: BebasNeueRegular;
+    font-size: 24px;
+    color: var(--color-primary-tailwind);
+    letter-spacing: 3px;
+    margin: 0;
+    padding: 0;
+  }
+  .info_content {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .info_content > .info {
+    font-size: 12px;
+    font-family: OpenSansRegular;
+  }
+  /* BODY */
+  .body-card {
+    gap: 14px;
+  }
+  .section {
+    width: 100%;
+    height: auto;
+    gap: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .section .subtitle-card-project {
+    font-size: 18px;
+    color: var(--color-primary-tailwind);
+    font-family: MontserratMedium;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+  }
+  .section .description-card-project {
+    width: 100%;
+    font-size: 14px;
+    font-family: OpenSansRegular;
+    line-height: 1.5;
+    color: var(--text-secondary);
+  }
+  .section > .badge-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+  }
+  .section > .badge-content .badge,
+  a {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    font-size: 12px;
+    font-family: OpenSansRegular;
+    text-transform: uppercase;
+    color: black;
+    width: fit-content;
+  }
+  .section > .badge-content .badge:not(:first-child) {
+    padding: 0px 8px;
+  }
+  .footer-card > .section > subtitle-card-project a {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+  .footer-card > .section > subtitle-card-project a:visited {
+    color: blue;
+  }
 }
 
 @keyframes animatePath {
@@ -518,7 +615,7 @@ textarea {
   100% {
     opacity: 1;
     transform: translateX(0px);
-    border-radius: 20px;
+    /* border-radius: 20px; */
   }
 }
 @keyframes icons {

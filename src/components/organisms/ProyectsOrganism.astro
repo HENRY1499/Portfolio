@@ -1,17 +1,32 @@
 ---
+import ReactAtom from "../atoms/ReactAtom.astro";
 import BoxProyectMolecule from "../molecules/BoxProyectMolecule.astro";
 import Projects from "@/samples/Projects.json";
 ---
 
-<div class="w-full h-full flex gap-24">
-  <div class="w-full h-fit grid grid-cols-6 grid-rows-2 gap-4">
+<div
+  class="sm:gap-24 sm:flex-row w-full h-full flex flex-col gap-4 justify-between"
+>
+  <div
+    class="md:grid-cols-6 md:grid-rows-2 md:gap-4 w-full h-auto overflow-auto grid gap-2 grid-cols-3 grid-rows-2 justify-center"
+  >
     {
       Projects.map((project, index) => (
         <BoxProyectMolecule data-project={index + 1} title={project.title} />
       ))
     }
   </div>
-  <section id="details-project-content" class="relative w-full h-full p-10">
+  <section id="details-project-content" class="sm:p-10 relative w-full p-4">
+    <div class="w-full h-full flex flex-col gap-4 items-center justify-center">
+      <ReactAtom style={"w-15 h-15"} />
+      <p class="font-[OpenSansRegular] text-white text-xl uppercase">
+        Mostrar Proyeto
+      </p>
+      <span
+        class="font-[OpenSansLight] text-sm w-full text-center text-secondary"
+        >Selecciona uno de los proyectos de la izquierda.</span
+      >
+    </div>
   </section>
 
   <script is:inline lang="ts">
@@ -189,10 +204,10 @@ import Projects from "@/samples/Projects.json";
       if (firstElement) {
         details_project.innerHTML = data[firstElement];
         projects[1].classList.add("active");
-        projects[2].classList.add("inactive");
-        projects[3].classList.add("inactive");
-        projects[4].classList.add("inactive");
-        projects[5].classList.add("inactive");
+        // projects[2].classList.add("inactive");
+        // projects[3].classList.add("inactive");
+        // projects[4].classList.add("inactive");
+        // projects[5].classList.add("inactive");
       }
     }
 
