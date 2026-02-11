@@ -5,8 +5,12 @@
   --color-switch: var(--sw-primary-bg);
   --color-toogle: var(--sw-toogle-bg);
   --color-footer: var(--bg-footer);
-  --color-btn: var(--btn-primary-bg);
-  --color-btn-hover: var(--btn-primary-bg-hover);
+  /* Buton CTA */
+  --color-cta: var(--btn-cta-bg);
+  --color-cta-label: var(--btn-cta-label);
+  --color-cta-hover-label: var(--btn-cta-bg-hover-label);
+  --color-cta-hover: var(--btn-cta-bg-hover);
+
   --color-active: var(--btn-bg-active);
   --color-inactive: var(--btn-bg-inactive);
   --color-icon: var(--icon-primary-bg);
@@ -17,22 +21,21 @@
   --color-border-left: var(--border-left);
 
   /* Text */
-  --text-icon-svg: var(--icon-primary-svg);
-  --text-icon: var(--icon-primary-label);
-  --text-banner-svg: var(--banner-primary-svg);
-  --text-banner: var(--banner-primary-label);
-  --text-primary: var(--text-primary);
-  --text-secondary: var(--text-secondary);
-  --text-thirty: var(--text-thirty);
-  --text-name: var(--text-name);
-  --text-exp: var(--text-exp);
-  --text-button: var(--btn-primary-label);
-  --text-active: var(--btn-bg-active);
-  --text-inactive: var(--btn-bg-inactive);
-  --text-toogle: var(--btn-bg-active);
+  --color-icon-svg: var(--icon-primary-svg);
+  --color-text-icon: var(--icon-primary-label);
+  --color-banner-svg: var(--banner-primary-svg);
+  --color-text-banner: var(--banner-primary-label);
+  --color-primary-tailwind: var(--text-title);
+  --color-secondary: var(--text-secondary);
+  --color-thirty: var(--text-thirty);
+  --color-name: var(--text-name);
+  --color-exp: var(--text-exp);
+  --color-button: var(--btn-primary-label);
+  --color-text-active: var(--btn-bg-active);
+  --color-text-inactive: var(--btn-bg-inactive);
 
   /* Shadow */
-  --shadow-xs: var(--shadow-xs);
+  --color-xs: var(--shadow-xs);
 }
 
 :root {
@@ -52,7 +55,7 @@
   --icon-primary-label: #839c94; /*Cuando haya label*/
 
   /* Text */
-  --text-primary: #46382c;
+  --text-title: #46382c;
   --text-secondary: #f4e2dc;
   --text-thirty: #745e49;
   --text-name: #dde6e3;
@@ -67,9 +70,10 @@
   --shadow-xs: #e9d7c0;
 
   /* Button CTA*/
-  --btn-primary-bg: #fbf6f4;
-  --btn-primary-bg-hover: #ffff;
-  --btn-primary-label: #ae8272;
+  --btn-cta-bg: #8c7157;
+  --btn-cta-label: #f4e2dc;
+  --btn-cta-bg-hover: #ffff;
+  --btn-cta-bg-hover-label: #8c7157;
 
   /* Button Enlaces (Links) */
   --btn-link-bg: #758a73;
@@ -117,7 +121,7 @@
   --icon-primary-label: #f0ece7; /*Cuando haya label*/
 
   /* Text */
-  --text-primary: #e0d7ce;
+  --text-title: #e0d7ce;
   --text-secondary: #e0d7ce;
   --text-thirty: #f0ece7;
   --text-name: #696156;
@@ -132,9 +136,10 @@
   --shadow-xs: #fed8a6;
 
   /* Button CTA*/
-  --btn-primary-bg: #8c7157;
-  --btn-primary-bg-hover: #ffff;
-  --btn-primary-label: #fbf6f4;
+  --btn-cta-bg: #fbf6f4;
+  --btn-cta-bg-hover: #696156;
+  --btn-cta-label: #8c7157;
+  --btn-cta-bg-hover-label: #fbf6f4;
 
   /* Button Enlaces (Links) */
   --btn-link-bg: #758a83;
@@ -213,12 +218,18 @@
   font-family: HomemadeApple;
   src: url(/fonts/Homemade_Apple/HomemadeAppleRegular.ttf);
 }
+* {
+  transition:
+    background-color 200ms linear 0.1s,
+    color 200ms linear,
+    border-color 200ms ease-in-out 0.2s;
+}
 html,
 body {
   margin: 0;
   padding: 0;
   width: 100%;
-  height: 100dvh;
+  min-height: auto;
   background-color: var(--bg-primary);
   overflow-x: hidden;
 }

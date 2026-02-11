@@ -7,9 +7,13 @@ import { cn } from "src/lib/utils.ts";
 
 <button
   {...atrs}
-  class={cn("w-full min-h-12 flex items-center px-8 bg-white ", style)}
+  class={cn(
+    "w-full min-h-12 flex items-center px-8 bg-cta hover:bg-cta-hover group",
+    style,
+  )}
 >
-  <span class="text-black font-[MontserratSemiBold] text-sm tracking-widest"
+  <span
+    class="text-cta-label font-[MontserratSemiBold] text-sm tracking-widest group-hover:text-cta-hover-label"
     >{title}</span
   >
 </button>
