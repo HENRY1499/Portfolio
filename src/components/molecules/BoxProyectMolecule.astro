@@ -6,11 +6,11 @@ const { title, ...atrs } = Astro.props as Props;
 
 <button
   {...atrs}
-  class="md:w-30 md:h-30 w-20 h-20 rounded-2xl bg-inactive/40 px-2"
+  class="lg:w-30 lg:h-30 mx-auto sm:w-25 sm:h-25 w-20 h-20 lg:rounded-2xl sm:rounded-lg bg-cta px-2"
 >
   <div class="w-full h-full flex items-center">
     <span
-      class="md:text-lg w-full font-[OpenSansBold] text-[10px] text-inactive text-center uppercase"
+      class="lg:text-lg md:text-sm w-full font-[OpenSansBold] text-[10px] text-cta-label text-center uppercase"
     >
       {title}
     </span>
