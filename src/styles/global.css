@@ -397,11 +397,14 @@ a {
 }
 
 /* ANIMACION EN PATH - EXPERIENCE */
+circle {
+  fill: var(--color-icon-svg);
+}
 .circular-text-content {
   text-transform: uppercase;
   font-size: 12px;
   font-weight: 100;
-  fill: #92795d;
+  fill: var(--color-icon-svg);
   animation: animatePath 50s linear reverse infinite;
   transform-origin: center;
 }

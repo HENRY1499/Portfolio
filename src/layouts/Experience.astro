@@ -4,21 +4,24 @@ import ExperienceOrganism from "@/components/organisms/ExperienceOrganism.astro"
 import SkillsOrganism from "@/components/organisms/SkillsOrganism.astro";
 ---
 
-<div id="exp" class="relative w-full h-screen py-24 flex flex-col gap-5">
+<div
+  id="exp"
+  class="sm:py-24 md:h-screen relative w-full h-full py-14 flex flex-col gap-5"
+>
   <div class="h-full w-full flex flex-col items-center gap-5">
     <div class="w-full flex flex-col gap-1.5">
       <h1
-        class="title w-full text-start text-5xl font-[MontserratRegular] uppercase"
+        class="xl:text-5xl lg:text-4xl sm:text-3xl border-left border-l-1 pl-1.5 text-lg w-full text-start font-[MontserratRegular] uppercase text-primary-tailwind"
       >
         Experiencias
       </h1>
-      <span class="font-[OpenSansLight] text-sm">
+      <span class="font-[OpenSansLight] text-[12px] text-primary-tailwind">
         Conocimiento que fui adquiriendo con el pasar de los años.
       </span>
     </div>
 
-    <div class="w-full h-full">
-      <div class="w-full grid grid-cols-2">
+    <div class="w-full h-full flex flex-col gap-4">
+      <div class="md:grid-cols-2 w-full grid gap-4">
         <SkillsOrganism />
         <MessageAtom />
       </div>
