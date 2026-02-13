@@ -8,7 +8,7 @@ import Projects from "@/samples/Projects.json";
   class="xl:gap-24 lg:flex-row w-full h-full flex flex-col gap-4 justify-between"
 >
   <div
-    class="lg:grid-cols-3 lg:grid-rows-4 md:gap-4 md:h-full sm:grid-cols-5 sm:grid-rows-1 sm:gap-5 w-full h-fit items-center overflow-auto grid gap-2 grid-cols-3 grid-rows-2 border-l-1 border-primary-tailwind border_light"
+    class="lg:grid-cols-3 lg:grid-rows-4 md:gap-4 md:h-full sm:grid-cols-5 sm:grid-rows-1 sm:gap-5 w-full h-fit items-center overflow-auto grid gap-2 grid-cols-3 grid-rows-2 border-l-1 border-primary-tailwind"
   >
     {
       Projects.map((project, index) => (
@@ -18,7 +18,7 @@ import Projects from "@/samples/Projects.json";
   </div>
   <section
     id="details-project-content"
-    class="lg:p-10 md:p-6 relative w-full p-4 border border-black"
+    class="lg:p-10 md:p-6 relative w-full p-4"
   >
     <div class="w-full h-full flex flex-col gap-4 items-center justify-center">
       <ReactAtom style={"w-15 h-15"} />
@@ -206,10 +206,6 @@ import Projects from "@/samples/Projects.json";
       if (firstElement) {
         details_project.innerHTML = data[firstElement];
         projects[1].classList.add("active");
-        // projects[2].classList.add("inactive");
-        // projects[3].classList.add("inactive");
-        // projects[4].classList.add("inactive");
-        // projects[5].classList.add("inactive");
       }
     }
 
@@ -219,8 +215,11 @@ import Projects from "@/samples/Projects.json";
         if (!index || !details_project) return;
 
         details_project.innerHTML = data[index];
-        projects.forEach((p) => p.classList.remove("active"));
+        projects.forEach((p) => {
+          (p.classList.remove("active"), p.classList.remove("border_light"));
+        });
         pro.classList.add("active");
+        pro.classList.add("border_light");
       });
     });
   </script>
