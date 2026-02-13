@@ -5,7 +5,7 @@ const { num_year, title, description } = Astro.props as Props;
 ---
 
 <div
-  class="xl:px-20 lg:px-10 lg:items-start md:gap-4 relative w-full border h-full flex flex-col items-center gap-2 px-2 py-5"
+  class="xl:px-20 lg:px-10 lg:items-start md:gap-4 relative w-full h-full flex flex-col items-center gap-2 px-2 py-5"
 >
   <slot />
   <p
@@ -14,12 +14,12 @@ const { num_year, title, description } = Astro.props as Props;
     {num_year} +
   </p>
   <h1
-    class="lg:text-2xl md:text-xl font-[MontserratMedium] text-xl text-banner-label border"
+    class="lg:text-2xl md:text-xl font-[MontserratMedium] text-xl text-banner-label"
   >
     {title}
   </h1>
   <span
-    class="lg:text-start lg:text-xl md:text-lg md:w-10/12 w-full font-[OpenSansLight] text-sm border text-center text-banner-label"
+    class="lg:text-start lg:text-xl md:text-lg md:w-10/12 w-full font-[OpenSansLight] text-sm text-center text-banner-label"
     >{description}</span
   >
 </div>
