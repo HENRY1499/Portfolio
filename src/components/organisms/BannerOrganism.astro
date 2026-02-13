@@ -6,26 +6,34 @@ import NodejsAtom from "../atoms/NodejsAtom.astro";
 ---
 
 <div
-  class="w-screen h-fit relative left-1/2 -translate-x-1/2 p-24 bg-[#eff3f1]"
+  class="2xl:py-24 w-screen h-fit relative left-1/2 -translate-x-1/2 bg-banner py-10"
 >
-  <div class="flex justify-center items-center">
+  <div
+    class="sm:flex-row sm:items-start h-full flex flex-col items-center justify-center border"
+  >
     <ItemBannerMolecule
       num_year={3}
       title={"Desarollo React"}
       description="Programando páginas web modernas con React de forma segura y escalable."
-      ><ReactAtom style="absolute top-0 right-5 -z-10" /></ItemBannerMolecule
+      ><ReactAtom
+        style="lg:absolute lg:top-0 lg:right-0 sm:w-1/4 w-1/5 h-full -z-10 stroke-[#839c94]"
+      /></ItemBannerMolecule
     >
     <ItemBannerMolecule
       num_year={1}
       title={"Creando Interfaces"}
       description="Diseño intuitivo de UI/UX, plasmando ideas creativas en el Figma."
-      ><FigmaAtom style="absolute top-0 right-5 -z-10" /></ItemBannerMolecule
+      ><FigmaAtom
+        style="lg:absolute lg:top-0 lg:right-5 sm:w-1/4 w-1/5 h-full -z-10 stroke-[#839c94]"
+      /></ItemBannerMolecule
     >
     <ItemBannerMolecule
       num_year={1.5}
       title={"Servicios Backend"}
       description="Desarrollo API’s seguras con NODEJS y EXPRESS."
-      ><NodejsAtom style="absolute top-0 right-5 -z-10" /></ItemBannerMolecule
+      ><NodejsAtom
+        style="lg:absolute lg:top-0 lg:right-5 sm:w-1/4 w-1/5 h-full -z-10 stroke-[#839c94]"
+      /></ItemBannerMolecule
     >
   </div>
 </div>

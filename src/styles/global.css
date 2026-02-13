@@ -23,6 +23,7 @@
   /* Text */
   --color-icon-svg: var(--icon-primary-svg);
   --color-text-icon: var(--icon-primary-label);
+  --color-banner-label: var(--banner-primary-label);
   --color-banner-svg: var(--banner-primary-svg);
   --color-text-banner: var(--banner-primary-label);
   --color-primary-tailwind: var(--text-title);
@@ -225,6 +226,7 @@
     color 200ms linear,
     border-color 200ms ease-in-out 0.2s;
 }
+
 html,
 body {
   margin: 0;

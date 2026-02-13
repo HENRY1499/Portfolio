@@ -4,9 +4,22 @@ type Props = { num_year: number; description: string } & HTMLAttributes<"p">;
 const { num_year, title, description } = Astro.props as Props;
 ---
 
-<div class="relative w-fit h-full flex flex-col gap-4 px-20">
+<div
+  class="xl:px-20 lg:px-10 lg:items-start md:gap-4 relative w-full border h-full flex flex-col items-center gap-2 px-2 py-5"
+>
   <slot />
-  <p class="font-[MontserratRegular] text-5xl">{num_year} +</p>
-  <h1 class="font-[MontserratMedium] text-2xl">{title}</h1>
-  <span class="w-10/12 font-[OpenSansLight] text-xl">{description}</span>
+  <p
+    class="lg:text-5xl md:text-4xl font-[MontserratRegular] text-4xl text-banner-label"
+  >
+    {num_year} +
+  </p>
+  <h1
+    class="lg:text-2xl md:text-xl font-[MontserratMedium] text-xl text-banner-label border"
+  >
+    {title}
+  </h1>
+  <span
+    class="lg:text-start lg:text-xl md:text-lg md:w-10/12 w-full font-[OpenSansLight] text-sm border text-center text-banner-label"
+    >{description}</span
+  >
 </div>
