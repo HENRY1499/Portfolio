@@ -104,6 +104,8 @@
   --card-primary-bg: #f0ece7;
   --card-primary-label: #758a83;
   --card-primary-title: #ffff;
+
+  --filter-icon: none;
 }
 [data-theme="dark"] {
   /* BG Generales */
@@ -164,6 +166,8 @@
   --card-primary-bg: #696156;
   --card-primary-label: #fff;
   --card-primary-title: #ffff;
+
+  --filter-icon: invert(1) sepia(1) saturate(5) hue-rotate(180deg);
 }
 
 /* FONTS MONTSERRAT*/
@@ -437,53 +441,58 @@ textarea {
 }
 /* incon random */
 .icons-wrapper {
+  width: 100% !important;
   position: relative;
   width: 30%;
   height: 250px;
 }
+
 .icon {
   position: absolute;
   opacity: 0.25;
   animation: icons 3000ms ease-in-out infinite;
 }
-/* posiciones “aleatorias” pero pensadas */
 .ibd {
   top: 10%;
   left: 5%;
+  filter: var(--filter-icon);
 }
 .icss {
   top: 65%;
   left: 40%;
+  filter: var(--filter-icon);
 }
 .ihtml {
   top: 25%;
   left: 45%;
+  filter: var(--filter-icon);
 }
 .ijs {
   top: 15%;
   left: 80%;
+  filter: var(--filter-icon);
 }
 .ipencil {
   bottom: 0%;
   left: 55%;
+  filter: var(--filter-icon);
 }
 .ireact {
   top: 80%;
   left: 25%;
+  filter: var(--filter-icon);
 }
 .itailwind {
   top: 75%;
   left: 15%;
+  filter: var(--filter-icon);
 }
 .itype {
   bottom: 10%;
   right: 5%;
+  filter: var(--filter-icon);
 }
-/* PHOTO AND NAME */
-.about_name {
-  font-size: 11rem;
-  line-height: 8rem;
-}
+
 /* Slider animate */
 .animate_slider {
   animation: animate_slider 20s linear infinite;
@@ -526,6 +535,64 @@ textarea {
     font-family: OpenSansLight;
     line-height: 1.3;
     letter-spacing: 1px;
+  }
+  /* incon random */
+  .icons-wrapper {
+    position: relative;
+    width: 30% !important;
+    height: 250px;
+  }
+  .icon {
+    position: absolute;
+    opacity: 0.25;
+    animation: icons 3000ms ease-in-out infinite;
+  }
+  /* posiciones “aleatorias” pero pensadas */
+
+  .icon {
+    position: absolute;
+    opacity: 0.25;
+    animation: icons 3000ms ease-in-out infinite;
+  }
+  .ibd {
+    top: 10%;
+    left: 5%;
+    filter: var(--filter-icon);
+  }
+  .icss {
+    top: 65%;
+    left: 40%;
+    filter: var(--filter-icon);
+  }
+  .ihtml {
+    top: 25%;
+    left: 45%;
+    filter: var(--filter-icon);
+  }
+  .ijs {
+    top: 15%;
+    left: 80%;
+    filter: var(--filter-icon);
+  }
+  .ipencil {
+    bottom: 0%;
+    left: 55%;
+    filter: var(--filter-icon);
+  }
+  .ireact {
+    top: 80%;
+    left: 25%;
+    filter: var(--filter-icon);
+  }
+  .itailwind {
+    top: 75%;
+    left: 15%;
+    filter: var(--filter-icon);
+  }
+  .itype {
+    bottom: 10%;
+    right: 5%;
+    filter: var(--filter-icon);
   }
 }
 
