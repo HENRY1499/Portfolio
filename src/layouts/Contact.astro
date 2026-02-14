@@ -7,28 +7,35 @@ import CopyrightTextAtom from "@/components/atoms/CopyrightTextAtom.astro";
 
 <div
   id="contact"
-  class="relative w-screen h-screen left-1/2 -translate-x-1/2 px-24 py-24 flex flex-col gap-5 overflow-x-hidden bg-[#5A3D29]"
+  class="2xl:py-24 xl:px-24 relative w-screen h-screen left-1/2 -translate-x-1/2 px-5 py-10 flex flex-col gap-5 overflow-hidden bg-footer"
 >
   <div class="w-full flex flex-col gap-1.5">
     <h1
-      class="font-[MontserratBold] text-8xl text-[#000] tracking-wider uppercase"
+      class="xl:text-8xl font-[MontserratBold] text-secondary tracking-wider uppercase text-3xl"
     >
       Contactame
     </h1>
-    <span class="font-[OpenSansLight] text-lg">
+    <span
+      class="font-[OpenSansLight] 2xl:text-lg text-sm tracking-wider text-secondary"
+    >
       Llena el formulario y cuéntame en como puedo ayudarte. Transformo ideas en
       experiencias digitales funcionales y atractivas. Ya sea diseño UI/UX o
       desarrollo web moderno, estoy listo para colaborar contigo.
     </span>
   </div>
-  <div class="w-full h-full flex gap-96">
-    <div class="w-full flex flex-col justify-between">
+  <div class="xl:gap-96 lg:flex-row w-full h-full flex flex-col gap-5">
+    <div class="md:flex-col w-full flex flex-col-reverse justify-between gap-4">
       <SoftSkillsOrganism />
-      <div class="flex flex-col gap-12">
+      <div class="xl:gap-12 w-full lg:flex flex-col gap-4 border hidden">
         <ContactMeOrganism />
         <CopyrightTextAtom />
       </div>
     </div>
     <FormContactOrganism />
+    <!-- medias extremas -->
+    <div class="xl:gap-12 w-full flex flex-col gap-4 border lg:hidden">
+      <ContactMeOrganism />
+      <CopyrightTextAtom />
+    </div>
   </div>
 </div>

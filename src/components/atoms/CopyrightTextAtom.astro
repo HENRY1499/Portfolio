@@ -1,8 +1,11 @@
 ---
-
+import type { HTMLAttributes } from "astro/types";
+import { cn } from "@/lib/utils";
+type Props = HTMLAttributes<"p">;
+const { class: className } = Astro.props as Props;
 ---
 
-<p class="w-full font-[OpenSansLight] text-xs text-white">
+<p class={cn("w-full font-[OpenSansLight] text-xs text-secondary", className)}>
   © {new Date().getFullYear()}
   Henry Castillo. Todos los derechos reservados.
 </p>
