@@ -4,6 +4,8 @@ type Props = HTMLAttributes<"label">;
 const { title, ...atrs } = Astro.props as Props;
 ---
 
-<label {...atrs} class="xl:text-lg text-sm text-secondary font-[OpenSansLight]"
+<label
+  {...atrs}
+  class="xl:text-lg sm:text-[16px] text-sm text-secondary font-[OpenSansLight]"
   >{title}</label
 >

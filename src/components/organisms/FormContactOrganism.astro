@@ -5,13 +5,13 @@ import ButtonAtom from "../atoms/ButtonAtom.astro";
 ---
 
 <form
-  class="xl:w-11/12 xl:gap-8 xl:p-8 flex flex-col border-2 border-dashed border-black rounded-xl gap-4 p-4"
+  class="xl:w-11/12 md:w-full xl:gap-8 xl:p-8 flex flex-col border-2 border-dashed border-thirty rounded-xl gap-4 p-4"
 >
   <div class="w-full flex flex-col gap-4">
     <LabelAtom title={"Nombre Completo"} />
     <InputAtom type="text" />
   </div>
-  <div class="w-full flex gap-4">
+  <div class="sm:flex-row w-full flex flex-col gap-4">
     <div class="w-full flex flex-col gap-4">
       <LabelAtom title={"Correo Electrónico"} />
       <InputAtom type="email" />
