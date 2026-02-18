@@ -26,7 +26,12 @@ import SliderOrganism from "@/components/organisms/SliderOrganism.astro";
           >
         </div>
         <div class="md:justify-end w-full flex items-center justify-center">
-          <ButtonAtom title={"Descargar CV"} style="w-fit" />
+          <ButtonAtom id="downloadBtn" style="w-fit">
+            <span
+              class="text-cta-label font-[MontserratSemiBold] text-sm tracking-widest group-hover:text-cta-hover-label"
+              >{"Descargar CV"}</span
+            >
+          </ButtonAtom>
         </div>
 
         <div class="w-full h-auto">

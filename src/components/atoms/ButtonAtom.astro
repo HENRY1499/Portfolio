@@ -1,19 +1,25 @@
 ---
 import type { HTMLAttributes } from "astro/types";
-type Props = HTMLAttributes<"button">;
-const { type, title, style, ...atrs } = Astro.props as Props;
+type Props = { id?: string; title?: string } & HTMLAttributes<"button">;
+const { type = "submit", id, title, style, ...atrs } = Astro.props as Props;
 import { cn } from "src/lib/utils.ts";
 ---
 
 <button
-  {...atrs}
+  id={id}
+  type={type}
   class={cn(
     "w-full min-h-12 flex items-center px-8 bg-cta hover:bg-cta-hover group",
     style,
   )}
 >
-  <span
-    class="text-cta-label font-[MontserratSemiBold] text-sm tracking-widest group-hover:text-cta-hover-label"
-    >{title}</span
-  >
+  <slot />
 </button>
+<script>
+  document.getElementById("downloadBtn")?.addEventListener("click", () => {
+    const link = document.createElement("a");
+    link.href = "/cv/HenryCastillo_CV.pdf";
+    link.download = "Henry-Castillo-CV.pdf";
+    link.click();
+  });
+</script>
