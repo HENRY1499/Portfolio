@@ -1,29 +1,35 @@
 ---
-
+import { cn } from "@/lib/utils";
+import type { HTMLAttributes } from "astro/types";
+type Props = HTMLAttributes<"div">;
+const { class: className, ...props } = Astro.props as Props;
 ---
 
 <div
-  class="relative w-full min-h-12 p-1 rounded-full bg-switch transition-colors duration-300"
+  class={cn(
+    "relative w-[1.5em] min-h-12 p-1 rounded-full bg-switch transition-colors duration-300",
+    className,
+  )}
 >
   <button
-    class="w-4 h-4 rounded-full absolute top-1 left-[.2em] bg-toogle toggle-btn transition-transform duration-300"
+    class="w-4 h-4 rounded-full absolute top-1 left-[.2em] bg-toogle toggle-btn transition-transform duration-300 z-[100]"
   >
   </button>
+</div>
 
-  <script>
-    const switcher = document.querySelector(".toggle-btn");
-    const root = document.documentElement;
-    const savedTheme = localStorage.getItem("theme");
+<script>
+  const root = document.documentElement;
+  const savedTheme = localStorage.getItem("theme");
 
-    if (savedTheme) {
-      root.setAttribute("data-theme", savedTheme);
-    }
-
+  if (savedTheme) {
+    root.setAttribute("data-theme", savedTheme);
+  }
+  document.querySelectorAll(".toggle-btn").forEach((switcher) => {
     switcher?.addEventListener("click", () => {
       const currentTheme = root.getAttribute("data-theme");
       const newTheme = currentTheme === "dark" ? "light" : "dark";
       root.setAttribute("data-theme", newTheme);
       localStorage.setItem("theme", newTheme);
     });
-  </script>
-</div>
+  });
+</script>

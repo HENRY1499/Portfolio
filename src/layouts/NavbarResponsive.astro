@@ -1,0 +1,50 @@
+---
+import SwitchMolecule from "@/components/molecules/SwitchMolecule.astro";
+import { cn } from "@/lib/utils";
+import type { HTMLAttributes } from "astro/types";
+type Props = HTMLAttributes<"button">;
+const { class: className, ...props } = Astro.props as Props;
+---
+
+<button
+  id="nav_btn"
+  class={cn(
+    "fixed top-0 right-0 w-10 h-10 rounded-full bg-banner-svg z-50",
+    className,
+  )}
+>
+  <div class="flex flex-col gap-[.1em] w-full h-full justify-center burger">
+    <span class="w-1/2 mx-auto border-2 border-navbar"></span>
+    <span class="w-1/2 mx-auto border-2 border-navbar"></span>
+    <span class="w-1/2 mx-auto border-2 border-navbar"></span>
+  </div>
+</button>
+
+<div
+  id="nav_mobile"
+  class="fixed top-0 left-0 w-full h-full bg-banner-svg p-6 gap-4 z-40"
+>
+  <div
+    class="w-full h-full flex flex-col items-start justify-end gap-4 border-r border-banner-label py-4"
+  >
+    <SwitchMolecule />
+    <span class="text-3xl text-start uppercase">Inicio</span>
+    <span class="text-3xl text-start uppercase">Proyectos</span>
+    <span class="text-3xl text-start uppercase">Experiencia</span>
+    <span class="text-3xl text-start uppercase">Sobre Mí</span>
+    <span class="text-3xl text-start uppercase">Contacto</span>
+  </div>
+</div>
+
+<script is:inline>
+  window.addEventListener("DOMContentLoaded", () => {
+    const navBtn = document.getElementById("nav_btn");
+    const navMobile = document.getElementById("nav_mobile");
+    if (navBtn && navMobile) {
+      navBtn.addEventListener("click", () => {
+        navBtn.classList.toggle("active");
+        navMobile.classList.toggle("nav-open");
+      });
+    }
+  });
+</script>

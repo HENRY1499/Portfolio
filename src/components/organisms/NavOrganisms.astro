@@ -35,16 +35,10 @@ import SwitchMolecule from "../molecules/SwitchMolecule.astro";
   </ul>
 </nav>
 
-<script>
-  import gsap from "gsap";
-  import ScrollTrigger from "gsap/ScrollTrigger";
-  gsap.registerPlugin(ScrollTrigger);
+<script is:inline type="module">
+  const links = document.querySelectorAll("nav ul li a[data-id]");
 
-  const links = document.querySelectorAll<HTMLAnchorElement>(
-    "nav ul li a[data-id]",
-  );
-
-  window.addEventListener("DOMContentLoaded", () => {
+  document.addEventListener("DOMContentLoaded", () => {
     // etiqueta <a>
     links.forEach((link) => {
       link.addEventListener("click", () => {
