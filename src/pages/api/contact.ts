@@ -12,7 +12,6 @@ export const POST: APIRoute = async ({ request }) => {
     if (name === "" || email === "" || message === "" || whatsapp === "") {
       return new Response("Faltan campos por completar", { status: 400 });
     }
-    console.log("Guardado en Firebase:", { name, email, message, whatsapp });
     await db.collection("Interested").add({
       name,
       email,
