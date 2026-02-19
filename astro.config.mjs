@@ -10,6 +10,9 @@ export default defineConfig({
   adapter: node({
     mode: "standalone",
   }),
+  server: {
+    host: true, // 👈 ESTO ES LA CLAVE
+  },
   vite: {
     resolve: {
       alias: {
