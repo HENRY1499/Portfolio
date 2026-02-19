@@ -1,6 +1,7 @@
 import type { APIRoute } from "astro";
 import { db } from "../../services/firebase";
 
+
 export const POST: APIRoute = async ({ request }) => {
   try {
     const data = await request.formData();
