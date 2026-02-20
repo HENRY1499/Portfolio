@@ -1,4 +1,9 @@
 import admin, { type ServiceAccount } from "firebase-admin";
+import fs from "fs";
+
+const serviceAccount = JSON.parse(
+  fs.readFileSync("/etc/secrets/serviceAccount.json", "utf8"),
+);
 // import serviceAccount from "../../serviceAccount.json";
 
 // const serviceAccount = JSON.parse(
@@ -7,9 +12,7 @@ import admin, { type ServiceAccount } from "firebase-admin";
 
 if (!admin.apps.length) {
   admin.initializeApp({
-    credential: admin.credential.cert(
-      import.meta.env.FIREBASE_ADMIN_API as ServiceAccount,
-    ),
+    credential: admin.credential.cert(serviceAccount as ServiceAccount),
   });
 }
 
