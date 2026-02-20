@@ -1,8 +1,8 @@
 import type { APIRoute } from "astro";
 import { db } from "../../services/firebase";
 
-
 export const POST: APIRoute = async ({ request }) => {
+  console.log("API CONTACT HIT");
   try {
     const data = await request.formData();
     const name = data.get("name")?.toString().trim();
