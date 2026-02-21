@@ -1,27 +1,26 @@
+import { createClient } from "@supabase/supabase-js";
 import type { APIRoute } from "astro";
-import { db } from "../../services/firebase";
-
+// Probando;
 export const POST: APIRoute = async ({ request }) => {
-  try {
-    const data = await request.formData();
-    const name = data.get("name")?.toString().trim();
-    const email = data.get("email")?.toString().trim();
-    const message = data.get("message")?.toString().trim();
-    const whatsapp = data.get("whatsapp")?.toString().trim();
+  const formData = await request.formData();
 
-    if (name === "" || email === "" || message === "" || whatsapp === "") {
-      return new Response("Faltan campos por completar", { status: 400 });
-    }
-    await db.collection("Interested").add({
-      name,
-      email,
-      message,
-      whatsapp,
-      createdAt: new Date(),
-    });
-    return new Response("Formulario enviado correctamente", { status: 200 });
-  } catch (error) {
-    console.error(error);
-    return new Response("Error interno", { status: 500 });
+  const supabase = createClient(
+    import.meta.env.SUPABASE_URL!,
+    import.meta.env.SUPABASE_SERVICE_ROLE_KEY!,
+  );
+
+  const { error } = await supabase.from("Interested").insert([
+    {
+      name: formData.get("name"),
+      email: formData.get("email"),
+      phone: formData.get("phone"),
+      message: formData.get("message"),
+    },
+  ]);
+
+  if (error) {
+    return new Response("Error", { status: 500 });
   }
+
+  return new Response("OK", { status: 200 });
 };

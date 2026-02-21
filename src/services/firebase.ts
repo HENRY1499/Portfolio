@@ -1,11 +1,27 @@
-import admin from "firebase-admin";
+import { createClient } from "@supabase/supabase-js";
+import type { APIRoute } from "astro";
 // Probando;
-if (!admin.apps.length) {
-  admin.initializeApp({
-    credential: admin.credential.cert(
-      JSON.parse(import.meta.env.FIREBASE_ADMIN_API as string),
-    ),
-  });
-}
+export const POST: APIRoute = async ({ request }) => {
+  const formData = await request.formData();
 
-export const db = admin.firestore();
+  const supabase = createClient(
+    process.env.SUPABASE_URL!,
+    process.env.SUPABASE_SERVICE_ROLE_KEY!,
+  );
+  console.log(supabase);
+
+  const { error } = await supabase.from("contacts").insert([
+    {
+      name: formData.get("name"),
+      email: formData.get("email"),
+      whatsapp: formData.get("whatsapp"),
+      message: formData.get("message"),
+    },
+  ]);
+
+  if (error) {
+    return new Response("Error", { status: 500 });
+  }
+
+  return new Response("OK", { status: 200 });
+};

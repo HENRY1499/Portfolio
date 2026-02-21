@@ -24,3 +24,5 @@ pnpm-debug.log*
 # jetbrains setting folder
 .idea/
 serviceAccount.json
+# Local Netlify folder
+.netlify
