@@ -1,12 +1,10 @@
-import admin, { type ServiceAccount } from "firebase-admin";
-
-const serviceAccount = JSON.parse(
-  Buffer.from(import.meta.env.FIREBASE_ADMIN_API!, "base64").toString("utf8"),
-);
+import admin from "firebase-admin";
 // Probando;
 if (!admin.apps.length) {
   admin.initializeApp({
-    credential: admin.credential.cert(serviceAccount as ServiceAccount),
+    credential: admin.credential.cert(
+      JSON.parse(import.meta.env.FIREBASE_ADMIN_API as string),
+    ),
   });
 }
 
