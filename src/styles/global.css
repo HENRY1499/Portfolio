@@ -52,7 +52,7 @@
 
   /* ICONS */
   --icon-primary-bg: #ffff;
-  --icon-primary-svg: #92ada4;
+  --icon-primary-svg: #46382c;
   --icon-primary-label: #839c94; /*Cuando haya label*/
 
   /* Text */
@@ -168,6 +168,9 @@
   --card-primary-title: #ffff;
 
   --filter-icon: invert(1) sepia(1) saturate(5) hue-rotate(180deg);
+}
+#circlePath {
+  fill: red;
 }
 
 /* FONTS MONTSERRAT*/

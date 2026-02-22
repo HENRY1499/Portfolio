@@ -1,6 +1,16 @@
 ---
 import BadgeAtom from "../atoms/BadgeAtom.astro";
 import CoffeAtom from "../atoms/CoffeAtom.astro";
+import type { HTMLAttributes } from "astro/types";
+type Props = {
+  description: { detail: string }[];
+  dateFrom: string;
+  dateTo: string;
+  enterprice: string;
+  mode: string;
+} & HTMLAttributes<"div">;
+const { description, dateFrom, dateTo, enterprice, mode } =
+  Astro.props as Props;
 ---
 
 <div
@@ -14,34 +24,27 @@ import CoffeAtom from "../atoms/CoffeAtom.astro";
     <h1
       class="md:text-5xl font-[BebasNeueRegular] text-xl tracking-wide text-primary-tailwind"
     >
-      Empresa
+      {enterprice}
     </h1>
     <p
       class="text-xs font-[OpenSansLight] tracking-wider text-primary-tailwind"
     >
-      Julio 2022 - Octubre 2022
+      {dateTo} - {dateFrom}
     </p>
   </div>
   <BadgeAtom
-    title={"Remoto"}
+    title={mode}
     style="sm:text-xs w-fit bg-black text-white font-[OpenSansLight] text-[10px] tracking-wider uppercase bg-banner text-primary-tailwind"
   />
   <div class="md:flex w-full flex-col gap-2 hidden">
-    <span class="font-[OpenSansLight] text-xs text-primary-tailwind"
-      >Maquetación de sitios web responsivos y accesibles utilizando HTML5, CSS3
-      y JavaScript moderno.</span
-    >
-    <span class="font-[OpenSansLight] text-xs text-primary-tailwind"
-      >Integración de componentes dinámicos y funcionalidades interactivas con
-      Vue.js.</span
-    >
-    <span class="font-[OpenSansLight] text-xs text-primary-tailwind"
-      >Desarrollo de backend con PHP y frameworks como Laravel, implementando
-      autenticación, rutas y consumo de APIs.</span
-    >
-    <span class="font-[OpenSansLight] text-xs text-primary-tailwind"
-      >Colaboración en proyectos con enfoque en rendimiento, escalabilidad y
-      buenas prácticas de desarrollo.</span
-    >
+    {
+      description.map((item, _index) => {
+        return (
+          <span class="font-[OpenSansLight] text-xs text-primary-tailwind">
+            - {item.detail}
+          </span>
+        );
+      })
+    }
   </div>
 </div>

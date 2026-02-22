@@ -1,14 +1,20 @@
 ---
 import CardExpMolecule from "../molecules/CardExpMolecule.astro";
+import Experience from "../../samples/Experience.json";
 ---
 
 <div
   class="md:px-2 md:flex-row md:flex sm:grid-cols-4 min-[425px]:grid-cols-2 grid overflow-x-auto scroll-smooth thin-scrollbar gap-4 p-2"
 >
-  <CardExpMolecule />
-  <CardExpMolecule />
-  <CardExpMolecule />
-  <CardExpMolecule />
-  <CardExpMolecule />
-  <CardExpMolecule />
+  {
+    Experience.map((item, _i) => (
+      <CardExpMolecule
+        enterprice={item.company}
+        mode={item.type}
+        dateFrom={item.dateFrom}
+        dateTo={item.dateTo}
+        description={item.responsability}
+      />
+    ))
+  }
 </div>
