@@ -4,6 +4,8 @@ import type { APIRoute } from "astro";
 export const POST: APIRoute = async ({ request }) => {
   const formData = await request.formData();
 
+  console.log(formData);
+
   const supabase = createClient(
     process.env.SUPABASE_URL!,
     process.env.SUPABASE_SERVICE_ROLE_KEY!,
