@@ -12,11 +12,11 @@ export const POST: APIRoute = async ({ request }) => {
   );
   console.log(supabase);
 
-  const { error } = await supabase.from("contacts").insert([
+  const { error } = await supabase.from("Interested").insert([
     {
       name: formData.get("name"),
       email: formData.get("email"),
-      whatsapp: formData.get("whatsapp"),
+      phone: formData.get("phone"),
       message: formData.get("message"),
     },
   ]);
